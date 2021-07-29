@@ -4,30 +4,62 @@
 
 #title {
 	text-align: center;
-	padding: 20px;
+	padding: 20px 0 0 0;
 	letter-spacing: 0.1em;
+}
+
+#sub-title {
+	text-align: center;
 }
 
 #img-div {
 	width: auto;
 	height: auto;
+	background-color: #060606;
+	padding: 0 0 20px 0;
 }
 
 #image {
 	width: 100%;
 	height: auto;
-	max-width: 700px;
+	max-width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
 }  
 
 #img-caption {
-	font-size: 14px;
+	font-size: 12px;
     font-style: oblique;
-    max-width: 700px;
+    max-width: 90%;
     margin-left: auto;
     margin-right: auto;
     display: block;
-    margin-top: 10px;
+    margin-top: 20px;
+    color: white;
+}
+
+#content {
+	background-color: #eaeaea;
+}
+
+#tribute-link button {
+	margin-left: auto;
+    margin-right: auto;
+    display: block;	
+    padding: 15px 32px;
+    font-size: 15px;
+}
+
+#tribute-link a {
+	text-decoration: none;
+	color: black;
+}
+
+#tribute-link button:hover {
+	background-color: black;
+}
+
+#tribute-link a:hover {
+	color: white;
 }
