@@ -4,7 +4,7 @@
 
 #main-title {
 	background-color: #c73220;
-	padding: 15px 0 15px 0;
+	padding: 3px 0 2px 0;
 	position: -webkit-sticky; /* Safari & IE */
 	position: sticky;
 	top: 0;
@@ -53,35 +53,38 @@
 
 #content div{
 	max-width: 100%;
-    padding: 20px 40px 40px 40px;
+    padding: 20px 40px 20px 40px;
 }
 
 #tribute-link button {
-    padding: 15px 32px;
-    font-size: 15px;
-    background-color: #c73220;
-    border: 0px;
+    border: 2px solid #c73220;
+	padding: 14px 28px;
+	font-size: 16px;
+	cursor: pointer;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-radius: 5px;
 }
 
 #tribute-link a {
 	text-decoration: none;
-	color: white;
+	color: #c73220;
 }
 
 #tribute-link button:hover {
-	background-color: grey;
+	background-color: #c73220;
 	color: white;
-	border: 0;
+
 }
 
 #tribute-link a:hover {
-	color: #white;
+	color: white;
 }
 
 #nav {
 	z-index: 1;
     position: sticky;
-    top: 160px;
+    top: 140px;
     background-color: white;
     padding: 5px;
     border-top: 2px solid grey;
@@ -112,20 +115,25 @@
 #footer {
 	width: auto;
 	height: auto;
-	background-color: #4a4a4a;
+	background-color: black;
 	padding: 6px 0 6px 0;
 	color: white;
 	text-align: center;
 }
 #competitive_career_imgs {
-	flex-direction: row;
-    justify-content: space-evenly;
+	justify-content: space-evenly;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+#competitive_career_imgs div {
+	width: 33%;
+	height: 250px;
 }
 
 #competitive_career_imgs img {
-	width: 31%;
+	width: 100%;
 	height: 250px;
-	padding: 6px;
 }
 
 /*Classes*/
@@ -136,4 +144,11 @@
 }
 .red_text {
 	color: red;
+}
+.text-center {
+	text-align: center;
+	margin: 10px 0 15px 0;
+}
+.img-radius {
+	border-radius: 5px;
 }
