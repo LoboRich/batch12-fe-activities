@@ -1,0 +1,70 @@
+.row-flex {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+
+.column-flex {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.col-50 {
+	flex: 50%;
+}
+
+.text-center {
+	text-align: center;
+}
+
+
+/* Full-width input fields */
+input[type=text], input[type=email], input[type=number] {
+  width: 50%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 8px;
+}
+
+input[type=text]:focus, input[type=email]:focus, input[type=number]:focus {
+  background-color: #edf2fb;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.btn {
+  font-weight: 600;
+  font-size: 12px;
+  padding: 15px;
+  letter-spacing: .5px;
+  border: 0;
+  border-radius: 8px;
+  width: 50%;
+}
+
+.btn-submit {
+	box-shadow: 0 2px 6px #218485;
+	background-color: #218485;
+	color: white;
+}
+
+.btn-submit:hover {
+	/*box-shadow: 0 2px 6px #008CBA;*/
+	background-color: white;
+	color: #218485;
+}
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,31 @@
+<!<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Survey Form</title>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+	<div class="row-flex">
+		
+		<div class="col-50">
+			<img src="./images/consultation.png">
+		</div>
+		<div class="col-50">
+			<h1 id="title" class="text-center">Consultation Survey Form</h1>
+			<p class="text-center">This is a sample description of our survey form.</p>
+			<hr>
+			<form id="survey-form" class="column-flex">
+				<label id="name-label">Fullname</label>
+				<input type="text" id="name" required="true" placeholder="Type yout Fullname">
+				<label id="email-label">Email</label>
+				<input type="email" id="email" required="true" placeholder="Type your Email">
+				<label id="number-label">Ratings</label>
+				<input type="number" id="number" required="true" min="1" max="10" placeholder="Choose a number from 1-10">
+				
+				<input type="submit" class="btn-submit btn">
+			</form>
+		</div>
+	</div>
+</body>
+</html>
