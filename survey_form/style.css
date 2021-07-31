@@ -1,7 +1,9 @@
 .row-flex {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
+	display: flex;
+	width: 95%;
+	flex-direction: row;
+	justify-content: center;
+	padding: 40px 0 0 0;
 }
 
 .column-flex {
@@ -11,17 +13,25 @@
 }
 
 .col-50 {
-	flex: 50%;
+	flex: 49%;
 }
 
 .text-center {
 	text-align: center;
 }
 
+#sub-title {
+	color: grey;
+}
+
+.float-left {
+	float: right;
+    padding: 22px 12px 0 0;
+}
 
 /* Full-width input fields */
 input[type=text], input[type=email], input[type=number] {
-  width: 50%;
+  width: 70%;
   padding: 15px;
   margin: 5px 0 22px 0;
   display: inline-block;
@@ -39,6 +49,8 @@ input[type=text]:focus, input[type=email]:focus, input[type=number]:focus {
 hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
+  width: 70%;
+  float: left;
 }
 
 .btn {
@@ -48,7 +60,7 @@ hr {
   letter-spacing: .5px;
   border: 0;
   border-radius: 8px;
-  width: 50%;
+  width: 70%;
 }
 
 .btn-submit {
