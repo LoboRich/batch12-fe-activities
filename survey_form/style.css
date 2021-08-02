@@ -10,6 +10,7 @@
   display: flex;
   width: 100%;
   flex-direction: column;
+  margin-top: 15px;
 }
 
 .col-50 {
@@ -23,7 +24,6 @@
 #title {
   margin-left: 30px;
   margin-right: 50px;
-  padding: 10px 20px 20px 0;
 }
 #sub-title {
 	color: grey;
@@ -32,16 +32,20 @@
   padding: 0 20px 20px 0;
 }
 
+label {
+  font-size: 0.80rem;
+}
+
 .float-left {
 	float: right;
     padding: 22px 12px 0 0;
 }
 
 /* Full-width input fields */
-input[type=text], input[type=email], input[type=number] {
+input[type=text], input[type=email], input[type=number], select {
   width: 70%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
+  padding: 12px;
+  margin: 3px 0 13px 0;
   display: inline-block;
   border: none;
   background: #f1f1f1;
@@ -83,84 +87,59 @@ hr {
 	color: #218485;
 }
 
-
-*, *:after, *:before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Open Sans";
+#btn-div {
+  float:right; 
+  margin-right: 190px;
 }
 
+#btn-div button {
+  border-radius: 8px;
+}
 
-/* Form Progress */
-.progress {
-  width: 50%;
-  /*margin: 20px auto;*/
-  text-align: center;
-  margin-left: 50px;
-  margin-right: 50px;
-  padding: 20px;
-}
-.progress .circle,
-.progress .bar {
-  display: inline-block;
-  background: #fff;
-  width: 40px; height: 40px;
-  border-radius: 40px;
-  border: 1px solid #d5d5da;
-}
-.progress .bar {
-  position: relative;
-  width: 80px;
-  height: 6px;
-  /*top: -33px;*/
-  margin-left: -5px;
-  margin-right: -5px;
-  border-left: none;
-  border-right: none;
-  border-radius: 0;
-}
-.progress .circle .label {
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  line-height: 32px;
-  border-radius: 32px;
-  margin-top: 3px;
-  color: #b5b5ba;
-  font-size: 17px;
-}
-/*.progress .circle .title {
-  color: #b5b5ba;
-  font-size: 13px;
-  line-height: 30px;
-  margin-left: -5px;
-}*/
-
-/* Done / Active */
-.progress .bar.done,
-.progress .circle.done {
-  background: #eee;
-}
-.progress .bar.active {
-  background: linear-gradient(to right, #EEE 40%, #FFF 60%);
-}
-.progress .circle.done .label {
-  color: #FFF;
-  background: #218485;
-  box-shadow: inset 0 0 2px rgba(0,0,0,.2);
-}
-.progress .circle.done .title {
-  color: #444;
-}
-.progress .circle.active .label {
+button {
+  background-color: white;
+  box-shadow: 0 2px 6px #218485;
   color: #218485;
-  background: #FFF;
-  box-shadow: inset 0 0 2px rgba(0,0,0,.2);
+  font-weight: 600;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
 }
-.progress .circle.active .title {
-  color: #0c95be;
+/* Hide all steps by default: */
+.tab {
+  display: none;
 }
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #04AA6D;
+}
+
 
 
 /* Responsive layout - makes a one column layout instead of a two-column layout */
