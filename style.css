@@ -1,170 +1,55 @@
-#main {
-	width: 100%;
+body {
+	color: #024249;
+}
+.row-flex {
+	display: flex;
+	/*width: 95%;*/
+	flex-direction: row;
 }
 
-#main-title {
-	background-color: #c73220;
-	position: -webkit-sticky; /* Safari & IE */
-	position: sticky;
-	top: 0;
-	z-index: 1;
+.column-flex {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 15px;
 }
 
-#title {
-	text-align: center;
-	padding: 20px 0 0 0;
-	color: white;
-	letter-spacing: 0.3em;
+.col-20 {
+	flex: 20%;
 }
 
-#sub-title {
-	text-align: center;
-	padding: 0 0 20px 0;
-	color: white;
+.col-80 {
+	flex: 80%;
 }
 
-#img-div {
-	width: auto;
-	height: auto;
-	background-color: #060606;
-	padding: 0 0 8px 0;
-}
-
-#image {
-	width: 100%;
-	height: auto;
-	max-width: 100%;
-}  
-
-#img-caption {
-	font-size: 12px;
-    font-style: oblique;
-    max-width: 86%;
-    margin-top: 20px;
-    color: white;
+#sidebar {
+	background-color: #FA744F;
+	height: 580px;
+	position: fixed;
+	width: 200px;
 }
 
 #content {
-	background-color: #eaeaea;
-	padding: 20px 0 0 0;
-	letter-spacing: 0.1em;
-}
+	 margin-left: 200px;
+	 padding: 10px;
 
-#content div{
-	max-width: 100%;
-    padding: 20px 40px 20px 40px;
-}
-
-#tribute-link button {
-    border: 2px solid #c73220;
-	padding: 14px 28px;
-	font-size: 16px;
-	cursor: pointer;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	border-radius: 5px;
-}
-
-#tribute-link a {
-	text-decoration: none;
-	color: #c73220;
-}
-
-#tribute-link button:hover {
-	background-color: #c73220;
-	color: white;
-
-}
-
-#tribute-link a:hover {
-	color: white;
-}
-
-#nav {
-	z-index: 1;
-    position: sticky;
-    top: 140px;
-    background-color: white;
-    padding: 5px;
-    border-top: 2px solid grey;
-}
-
-#nav ul {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-}
-
-#nav ul li{
-    padding: 0 40px 0 0;
-    list-style: none;
-    font-weight: 600;
-}
-#nav ul li a{
-	text-decoration: none;
-    color: black;
-}
-
-#nav ul li a:hover{
-	text-decoration-line: underline;
-    text-underline-offset: 10px;
-    color: #c73220;
-}
-
-#footer {
-	width: auto;
-	height: auto;
-	background-color: black;
-	padding: 6px 0 6px 0;
-	color: white;
-	text-align: center;
-}
-#competitive_career_imgs {
-	justify-content: space-evenly;
-    display: flex;
-    margin-bottom: 50px;
-}
-
-#competitive_career_imgs div {
-	width: 33%;
-	height: 250px;
-}
-
-#competitive_career_imgs img {
-	width: 100%;
-	height: 250px;
-}
-
-/*Classes*/
-.center_element {
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-}
-.red_text {
-	color: red;
-}
-.text-center {
-	text-align: center;
-	margin: 10px 0 15px 0;
-}
-.img-radius {
-	border-radius: 5px;
 }
 
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 200px;
-  background-color: #f1f1f1;
+  margin-top: 50px;
+
 }
 
 li a {
   display: block;
-  color: #000;
-  padding: 8px 16px;
+  color: white;
+  padding: 15px 16px;
   text-decoration: none;
+  font-weight: bold;
+  text-align: center;
 }
 
 /* Change the link color on hover */
@@ -173,9 +58,45 @@ li a:hover {
   color: white;
 }
 
+#portfolio li {
+	background-color: #ededed;
+	border: 1px solid white;
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#portfolio li a{
+	color: #024249;
+}
+
+#portfolio li a:hover{
+	color: white;
+}
+
 .active-li {
 	background-color: #555 !important;
 }
 .active-li a {
+	color: white;
+}
+
+#title {
+	color: white;
+	padding: 16px;
+	background-color: #024249;
+	text-align: center;
+
+}
+
+#landing-page {
+	background-color: #ededed;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
+	padding: 50px;
+}
+#portfolio {
+	background-color: #16817A;
+	clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+	padding: 50px;
 	color: white;
 }
