@@ -1,0 +1,56 @@
+.row-flex {
+	display: flex;
+	/*width: 95%;*/
+	flex-direction: row;
+	justify-content: center;
+	padding: 40px 0 0 0;
+}
+
+.column-flex {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+#main {
+  width: 99%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+#main-title {
+	position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.full-width {
+	width: 100%;
+}
+
+#image {
+	height: 550px;
+}
+
+#quotes h2 {
+	font-size:  3rem;
+	text-align: center;
+}
+
+#title {
+	font-size: 4.7rem;
+	font-family: 'Balsamiq Sans', cursive;
+	letter-spacing: 8px;
+}
+
+#img-caption {
+	font-style: italic;
+   color: grey;
+   text-align: center;
+}
+
+
