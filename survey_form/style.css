@@ -25,9 +25,10 @@
 }
 
 #title {
-  margin-left: 30px;
+  margin-left: 55px;
   margin-right: 50px;
 }
+
 #sub-title {
 	color: grey;
   margin-left: 60px;
@@ -45,7 +46,7 @@ label {
 }
 
 /* Full-width input fields */
-input[type=text], input[type=email], input[type=number], select {
+input[type=text], input[type=email], input[type=number], select, texarea{
   width: 70%;
   padding: 12px;
   margin: 3px 0 13px 0;
@@ -60,6 +61,21 @@ input[type=text]:focus, input[type=email]:focus, input[type=number]:focus {
   outline: none;
 }
 
+#checkbox div{
+  padding: 0 0 5px 0;
+}
+
+#checkbox label {
+    font-size: 1rem;
+}
+
+#radio div{
+  padding: 0 0 5px 0;
+}
+
+#radio label {
+    font-size: 1rem;
+}
 /* Overwrite default styles of hr */
 hr {
   border: 1px solid #f1f1f1;
@@ -144,7 +160,7 @@ button:hover {
 }
 
 #steps-div {
-  margin-left: 26%;
+  margin-left: 30%;
 }
 
 

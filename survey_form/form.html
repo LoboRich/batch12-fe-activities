@@ -17,14 +17,13 @@
 		<div class="col-50 form-flex">
 			
 
-			<h1 id="title">Consultation Survey Form</h1>
+			<h1 id="title">Medical Questionnaire</h1>
 			<p id="sub-title">This is a sample description of our survey form.</p>
 			<div id="steps-div">
 				<span class="step"></span>
 				<span class="step"></span>
 			</div>
 			<form id="regForm" action="/action_page.php">
-			  <h1>Register:</h1>
 			  <!-- One "tab" for each step in the form: -->
 			  <div class="tab column-flex">
 					<label id="name-label">Fullname</label>
@@ -38,13 +37,42 @@
 						<option>Op1</option>
 						<option>Op2</option>
 					</select>
-			</div>
+				</div>
 			  <div class="tab">
-					<label>Dropdown</label>
-					<select>
-						<option>Op1</option>
-						<option>Op2</option>
-					</select>
+          <div id="radio">
+            <label>Radio</label>
+            <div>
+              <input type="radio" id="html" name="fav_language" value="HTML">
+              <label for="html">HTML</label>
+            </div>
+            <div>
+              <input type="radio" id="css" name="fav_language" value="CSS">
+              <label for="css">CSS</label>
+            </div>
+            <div>
+              <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+              <label for="javascript">JavaScript</label>
+            </div>
+          </div>
+          <br>
+          <div id="checkbox">
+            <label>Checkbox</label>
+            <div>
+              <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+              <label for="vehicle1"> I have a bike</label>
+            </div>
+            <div>
+              <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+              <label for="vehicle2"> I have a car</label>
+            </div>
+            <div>
+              <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+              <label for="vehicle3"> I have a boat</label>
+            </div>
+            
+          </div>
+          <label>Additional Comments</label>
+          <textarea style="text"></textarea>
 				</div>
 			  
 			  <div style="overflow:auto;">
