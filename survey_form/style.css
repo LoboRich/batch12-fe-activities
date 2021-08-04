@@ -104,25 +104,17 @@ hr {
 
 .btn-submit {
 	box-shadow: 0 2px 6px #218485;
-	background-color: #218485;
+	background-color: #16817A;
 	color: white;
   float: right;
 }
 
 .btn-submit:hover {
 	/*box-shadow: 0 2px 6px #008CBA;*/
-	background-color: white;
-	color: #218485;
+	background-color: #FA744F;
+	color: white;
 }
 
-#btn-div {
-  float:right; 
-  margin-right: 190px;
-}
-
-#btn-div button {
-  border-radius: 8px;
-}
 
 button {
   background-color: white;
@@ -143,3 +135,80 @@ button:hover {
   opacity: 0.8;
 }
 
+
+@media only screen and (min-width: 900px) and (max-width: 1024px) {
+  #main {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  #image img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 250px;
+    height: 250px;
+  }
+
+  #form {
+    padding: 10px;
+  }
+
+  #content div {
+    width: 99%;
+  }
+
+  #btn-action {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 899px) {
+  #main {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  #image img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 230px;
+    height: 230px;
+  }
+
+  #content div {
+    width: 99%;
+  }
+  
+}
+
+@media only screen and (min-width: 200px) and (max-width: 700px) {
+  #main {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  #image img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 200px;
+    height: 200px;
+  }
+
+  #form {
+    flex-direction: column;
+  }
+
+  #content div {
+    width: 99%;
+  }
+
+  #image {
+    padding: 0px;
+  }
+}
