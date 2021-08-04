@@ -167,6 +167,32 @@ button:hover {
   }
 }
 
+.inline-item {
+  display: inline;  the default for span 
+  width: 100px;
+  /*text-align: center;*/
+}
+
+.inline-group h5 {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.inline-group-div {
+  padding: 28px;
+
+}
+
+#go-back {
+  width: 200px;
+  margin-right: 10px;
+}
+
+#go-back a {
+  text-decoration: none;
+  color: white;
+}
+
 @media only screen and (min-width: 701px) and (max-width: 899px) {
   #main {
     flex-direction: column;

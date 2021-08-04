@@ -1,10 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Survey Form</title>
+  <meta charset="utf-8">
+  <title>Survey Form</title>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+  <form action="action.html" method="GET" id="survey-form">
+    <div class="row-flex" id="main">
+      <div id="image" class="col-20">
+        <img src="./images/consultation2.png" id="image">
+      </div>
+      <div id="content" class="col-80">
+        <div class="column-flex">
+          <div id="title">
+            <h1 id="title">THANK YOU!</h1>
+              <p id="sub-title">Answering to all our questions will help us implement the best functional health improvement programs.</p>   
+          </div>
+          <div id="form" class="column-flex inline-group-div">
+          	<div class="inline-group">
+          		<label class="inline-item">Fullname: </label>
+          		<h5 class="inline-item" id="fullname"></h5>
+          	</div>
+          	<div class="inline-group">
+          		<label class="inline-item">Email: </label>
+          		<h5 class="inline-item" id="email"></h5>
+          	</div>
+          	<div class="inline-group">
+          		<label class="inline-item">Gender: </label>
+          		<h5 class="inline-item" id="gender"></h5>
+          	</div>
+          	<div class="inline-group">
+          		<label class="inline-item">Sleep hours: </label>
+          		<h5 class="inline-item" id="sleep-hours"></h5>
+          	</div>
 
+          	<div class="inline-group">
+          		<label class="inline-item">Regular Exercises: </label>
+          		<h5 class="inline-item" id="exercises"></h5>
+          	</div>
+
+          	<div class="inline-group">
+          		<label class="inline-item">Have smoked?: </label>
+          		<h5 class="inline-item" id="smoked"></h5>
+          	</div>
+
+          	<div class="inline-group">
+          		<label class="inline-item">Comments: </label>
+          		<h5 class="inline-item" id="comments"></h5>
+          	</div>
+
+          </div>
+          <div id="btn-action">
+          	<button class="btn btn-submit" id="go-back"><a href="form.html">GO BACK TO FORM</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <script type="text/javascript">
+  	var url_string = window.location.href
+  	var url = new URL(url_string);
+	var name = url.searchParams.get("name");
+	var email = url.searchParams.get("email");
+	var gender = url.searchParams.get("gender");
+	var sleep_hours = url.searchParams.get("sleep-hours");
+	var exercise = url.searchParams.getAll("exercise");
+	var smoked = url.searchParams.getAll("smoked");
+	var comments = url.searchParams.getAll("comments");
+	document.getElementById("fullname").textContent += name;
+	document.getElementById("email").textContent += email;
+	document.getElementById("gender").textContent += gender;
+	document.getElementById("sleep-hours").textContent += sleep_hours + " hrs/day";
+	document.getElementById("exercises").textContent += exercise;
+	document.getElementById("smoked").textContent += smoked;
+	document.getElementById("comments").textContent += comments;
+  </script>
 </body>
 </html>

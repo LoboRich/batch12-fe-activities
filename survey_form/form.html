@@ -28,15 +28,15 @@
               <div id="checkbox">
                 <label>Do you regularly practice the following exercises?</label><br><br>
                 <div>
-                  <input type="checkbox" name="exercise" value="Bike">
+                  <input type="checkbox" name="exercise" value="walking" multiple="true">
                   <label> Walking or Running</label>
                 </div>
                 <div>
-                  <input type="checkbox" name="exercise" value="Boat">
+                  <input type="checkbox" name="exercise" value="other" multiple="true">
                   <label> Other</label>
                 </div>
                 <div>
-                  <input type="checkbox" name="exercise" value="Boat">
+                  <input type="checkbox" name="exercise" value="none" multiple="true">
                   <label>I don't exercise</label>
                 </div>
               </div>
@@ -56,11 +56,11 @@
               <div id="radio">
                 <label>Have you ever smoked?</label> <br><br>
                 <div>
-                  <input type="radio" name="smoked">
+                  <input type="radio" name="smoked" value="yes">
                   <label >Yes</label>
                 </div>
                 <div>
-                  <input type="radio" name="smoked">
+                  <input type="radio" name="smoked" value="no">
                   <label>No</label>
                 </div>
               </div>
@@ -70,7 +70,7 @@
           </div>
           <div id="btn-action">
             <label>Additional Comments</label>
-            <textarea></textarea>
+            <textarea name="comments"></textarea>
             <input type="submit" class="btn btn-submit">
           </div>
         </div>
