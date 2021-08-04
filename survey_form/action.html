@@ -69,7 +69,7 @@
 	var sleep_hours = url.searchParams.get("sleep-hours");
 	var exercise = url.searchParams.getAll("exercise");
 	var smoked = url.searchParams.getAll("smoked");
-	var comments = url.searchParams.getAll("comments");
+	var comments = url.searchParams.get("comments");
 	document.getElementById("fullname").textContent += name;
 	document.getElementById("email").textContent += email;
 	document.getElementById("gender").textContent += gender;
