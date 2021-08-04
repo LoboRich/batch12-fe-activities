@@ -1,167 +1,81 @@
-<!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Survey Form</title>
-	<link rel="stylesheet" type="text/css" href="./style.css">
-	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <meta charset="utf-8">
+  <title>Survey Form</title>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<div class="row-flex">
-		
-		<div class="col-50 image-flex">
-			<img src="./images/consultation.png" id="image">
-		</div>
-		<div class="col-50 form-flex">
-			
+  <form method="get" id="survey-form">
+    <div class="row-flex">
+      <div id="image" class="col-20">
+        <img src="./images/consultation.png" id="image">
+      </div>
+      <div id="content" class="col-80">
+        <div class="column-flex">
+          <div id="title">
+            <h1 id="title">Health Survey</h1>
+              <p id="sub-title">Answering to all our questions will help us implement the best functional health improvement programs.</p>   
+          </div>
+          <div id="form" class="row-flex">
+            <div class="column-flex">
+              <label id="name-label">Fullname</label>
+              <input type="text" id="name" required="true" placeholder="Type yout Fullname">
+              <label id="email-label">Email</label>
+              <input type="email" id="email" required="true" placeholder="Type your Email"> 
 
-			<h1 id="title">Medical Questionnaire</h1>
-			<p id="sub-title">This is a sample description of our survey form.</p>
-			<div id="steps-div">
-				<span class="step"></span>
-				<span class="step"></span>
-			</div>
-			<form id="regForm" action="/action_page.php">
-			  <!-- One "tab" for each step in the form: -->
-			  <div class="tab column-flex">
-					<label id="name-label">Fullname</label>
-					<input type="text" id="name" required="true" placeholder="Type yout Fullname">
-					<label id="email-label">Email</label>
-					<input type="email" id="email" required="true" placeholder="Type your Email">
-					<label id="number-label">Ratings</label>
-					<input type="number" id="number" required="true" min="1" max="10" placeholder="Choose a number from 1-10">
-					<label>Dropdown</label>
-					<select>
-						<option>Op1</option>
-						<option>Op2</option>
-					</select>
-				</div>
-			  <div class="tab">
-          <div id="radio">
-            <label>Radio</label>
-            <div>
-              <input type="radio" id="html" name="fav_language" value="HTML">
-              <label for="html">HTML</label>
+              <div id="checkbox">
+                <label>Do you regularly practice the following exercises?</label>
+                <div>
+                  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                  <label for="vehicle1"> Walking or Running</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                  <label for="vehicle3"> Other</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                  <label for="vehicle3">I don't exercise</label>
+                </div>
+              </div>
             </div>
-            <div>
-              <input type="radio" id="css" name="fav_language" value="CSS">
-              <label for="css">CSS</label>
-            </div>
-            <div>
-              <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-              <label for="javascript">JavaScript</label>
+            <div class="column-flex">
+
+              <label>What is your gender?</label>
+              <select>
+                <option>Female</option>
+                <option>Male</option>
+              </select>
+
+              <label id="number-label">How many hours a day do you usually sleep?</label>
+              <input type="number" id="number" required="true" min="1" max="24" placeholder="Number of hours you sleep in a day">
+
+
+              <div id="radio">
+                <label>Have you ever smoked?</label>
+                <div>
+                  <input type="radio" id="html" name="fav_language" value="HTML">
+                  <label for="html">Yes</label>
+                </div>
+                <div>
+                  <input type="radio" id="css" name="fav_language" value="CSS">
+                  <label for="css">No</label>
+                </div>
+              </div>
+                  
+             
             </div>
           </div>
-          <br>
-          <div id="checkbox">
-            <label>Checkbox</label>
-            <div>
-              <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-              <label for="vehicle1"> I have a bike</label>
-            </div>
-            <div>
-              <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-              <label for="vehicle2"> I have a car</label>
-            </div>
-            <div>
-              <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-              <label for="vehicle3"> I have a boat</label>
-            </div>
-            
+          <div id="btn-action">
+            <label>Additional Comments</label>
+            <textarea></textarea>
+            <input type="submit" class="btn btn-submit">
           </div>
-          <label>Additional Comments</label>
-          <textarea style="text"></textarea>
-				</div>
-			  
-			  <div style="overflow:auto;">
-			    <div style="float:right;">
-			      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-			      <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-			    </div>
-			  </div>
-			 
-			</form>
-		</div>
-	</div>
-<script>
-	var currentTab = 0; // Current tab is set to be the first tab (0)
-	showTab(currentTab); // Display the current tab
-
-	function showTab(n) {
-	  // This function will display the specified tab of the form...
-	  var x = document.getElementsByClassName("tab");
-	  x[n].style.display = "flex";
-	  x[n].classList.add("column-flex");
-	  //... and fix the Previous/Next buttons:
-	  if (n == 0) {
-	    document.getElementById("prevBtn").style.display = "none";
-	  } else {
-	    document.getElementById("prevBtn").style.display = "inline";
-	  }
-	  if (n == (x.length - 1)) {
-	    document.getElementById("nextBtn").innerHTML = "Submit";
-	  } else {
-	    document.getElementById("nextBtn").innerHTML = "Next";
-	  }
-	  //... and run a function that will display the correct step indicator:
-	  fixStepIndicator(n)
-	}
-
-	function nextPrev(n) {
-	  // This function will figure out which tab to display
-	  var x = document.getElementsByClassName("tab");
-	  // Exit the function if any field in the current tab is invalid:
-	  if (n == 1 && !validateForm()) return false;
-	  // Hide the current tab:
-	  x[currentTab].style.display = "none";
-	  // Increase or decrease the current tab by 1:
-	  currentTab = currentTab + n;
-	  // if you have reached the end of the form...
-	  if (currentTab >= x.length) {
-	    // ... the form gets submitted:
-	    document.getElementById("regForm").submit();
-	    return false;
-	  }
-	  // Otherwise, display the correct tab:
-	  showTab(currentTab);
-	}
-
-	function validateForm() {
-	  // This function deals with validation of the form fields
-	  var x, y, i, valid = true;
-	  x = document.getElementsByClassName("tab");
-	  y = x[currentTab].getElementsByTagName("input");
-	  // A loop that checks every input field in the current tab:
-	  for (i = 0; i < y.length; i++) {
-	    // If a field is empty...
-	    if (y[i] == "" || y[i].checkValidity() == false) {
-	      // add an "invalid" class to the field:
-	      y[i].className += " invalid";
-	      // and set the current valid status to false
-	      valid = false;
-	    }
-	  }
-	  // If the valid status is true, mark the step as finished and valid:
-	  if (valid) {
-	    document.getElementsByClassName("step")[currentTab].className += " finish";
-	  }
-	  return valid; // return the valid status
-	}
-
-	function fixStepIndicator(n) {
-	  // This function removes the "active" class of all steps...
-	  var i, x = document.getElementsByClassName("step");
-	  for (i = 0; i < x.length; i++) {
-	    x[i].className = x[i].className.replace(" active", "");
-	  }
-	  //... and adds the "active" class on the current step:
-	  x[n].className += " active";
-	}
-	</script>
-
+        </div>
+      </div>
+    </div>
+  </form>
 </body>
-
 </html>
-

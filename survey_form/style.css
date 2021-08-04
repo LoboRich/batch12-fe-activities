@@ -3,7 +3,7 @@
 	/*width: 95%;*/
 	flex-direction: row;
 	justify-content: center;
-	padding: 40px 0 0 0;
+  border: 1px solid;
 }
 
 .flex {
@@ -13,11 +13,22 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-  margin-top: 15px;
+  border: 1px solid;
+}
+
+.col-20 {
+	flex: 20%;
+  border: 1px solid;
+}
+
+.col-80 {
+  flex: 80%;
+  border: 1px solid;
 }
 
 .col-50 {
-	flex: 49%;
+  flex: 50%;
+  border: 1px solid;
 }
 
 .text-center {
@@ -25,29 +36,23 @@
 }
 
 #title {
-  margin-left: 55px;
-  margin-right: 50px;
+  text-align: center;
 }
 
 #sub-title {
 	color: grey;
-  margin-left: 60px;
-  margin-right: 50px;
-  padding: 0 20px 20px 0;
-}
-
-label {
-  font-size: 0.80rem;
+  text-align: center;
 }
 
 #image {
-	float: right;
-    padding: 22px 12px 0 0;
+}
+
+#form div {
+  padding: 10px 10px 10px 0;
 }
 
 /* Full-width input fields */
-input[type=text], input[type=email], input[type=number], select, texarea{
-  width: 70%;
+input[type=text], input[type=email], input[type=number], select, textarea{
   padding: 12px;
   margin: 3px 0 13px 0;
   display: inline-block;
@@ -56,9 +61,13 @@ input[type=text], input[type=email], input[type=number], select, texarea{
   border-radius: 8px;
 }
 
-input[type=text]:focus, input[type=email]:focus, input[type=number]:focus {
+input[type=text]:focus, input[type=email]:focus, input[type=number]:focus, select:focus, textarea:focus {
   background-color: #edf2fb;
   outline: none;
+}
+
+textarea {
+  width: 100%;
 }
 
 #checkbox div{
@@ -70,7 +79,7 @@ input[type=text]:focus, input[type=email]:focus, input[type=number]:focus {
 }
 
 #radio div{
-  padding: 0 0 5px 0;
+  padding: 3px 0 5px 0;
 }
 
 #radio label {
@@ -91,13 +100,14 @@ hr {
   letter-spacing: .5px;
   border: 0;
   border-radius: 8px;
-  width: 70%;
+  width: 100%;
 }
 
 .btn-submit {
 	box-shadow: 0 2px 6px #218485;
 	background-color: #218485;
 	color: white;
+  float: right;
 }
 
 .btn-submit:hover {
@@ -134,92 +144,3 @@ button:hover {
   opacity: 0.8;
 }
 
-#prevBtn {
-  background-color: #bbbbbb;
-}
-
-/* Make circles that indicate the steps of the form: */
-.step {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbbbbb;
-  border: none;  
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.5;
-}
-
-.step.active {
-  opacity: 1;
-}
-
-/* Mark the steps that are finished and valid: */
-.step.finish {
-  background-color: #218485;
-}
-
-#steps-div {
-  margin-left: 30%;
-}
-
-
-/* Responsive layout - makes a one column layout instead of a two-column layout */
-@media only screen and (max-width: 768px) {
-  .row-flex  {
-    flex-direction: column;
-  }
-
-  .col-50 {
-    align-items: center;
-    justify-content: center;
-  }
-
-  .image-flex {
-    display: flex;
-  }
-
-  .form-flex {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    flex: 90%;
-  }
-  .col-50 #image {
-    width: 250px;
-    height: 250px;
-  }
-
-  /* Full-width input fields */
-  input[type=text], input[type=email], input[type=number], select {
-    width: 90%;
-    padding: 12px;
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
-    border-radius: 8px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  label {
-    font-size: 1rem;
-    margin: 7px 0 0 25px;
-  }
-
-  #title {
-    text-align: center;
-    font-size: 1.5em;
-  }
-
-  #sub-title {
-    text-align: center;
-    font-size: 0.80em;
-  }
-
-  #steps-div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: auto;
-  }
-}
