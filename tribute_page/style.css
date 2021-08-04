@@ -59,6 +59,7 @@
   top: 70%;
   text-shadow: 1px 2px grey;
   text-transform: uppercase;
+  text-align: center;
 }
 
 hr {
@@ -113,12 +114,16 @@ body {
   position: absolute;
   width: 6px;
   background-color: grey;
-  top: 0;
+  top: 137px;
   bottom: 0;
   left: 50%;
   margin-left: -3px;
 }
 
+.timeline h1 {
+    text-align: center;
+    padding: 30px;
+}
 /* Container around content */
 .container {
   padding: 10px 40px;
@@ -227,7 +232,7 @@ body {
 
 .parallax {
   /* The image used */
-  background-image: url("images/wt_hidilyn-diaz.webp");
+  background-image: url("images/medal.jpg");
   clip-path: polygon(0 0, 100% 4%, 100% 96%, 0% 100%);
   /* Set a specific height */
   min-height: 500px; 
@@ -242,7 +247,8 @@ body {
 
 .parallax2 {
   /* The image used */
-  background-image: url("images/medal.jpg");
+  
+  background-image: url("images/wt_hidilyn-diaz.webp");
   /* Set a specific height */
   min-height: 500px; 
 
