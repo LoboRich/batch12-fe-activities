@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <form method="get" id="survey-form">
+  <form action="action.html" method="GET" id="survey-form">
     <div class="row-flex" id="main">
       <div id="image" class="col-20">
         <img src="./images/consultation2.png" id="image">
@@ -21,47 +21,47 @@
           <div id="form" class="row-flex">
             <div class="column-flex">
               <label id="name-label">Fullname</label>
-              <input type="text" id="name" required="true" placeholder="Type yout Fullname">
+              <input type="text" name="name" id="name" required="true" placeholder="Type yout Fullname">
               <label id="email-label">Email</label>
-              <input type="email" id="email" required="true" placeholder="Type your Email"> 
+              <input type="email" name="email" id="email" required="true" placeholder="Type your Email"> 
 
               <div id="checkbox">
                 <label>Do you regularly practice the following exercises?</label><br><br>
                 <div>
-                  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                  <label for="vehicle1"> Walking or Running</label>
+                  <input type="checkbox" name="exercise" value="Bike">
+                  <label> Walking or Running</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                  <label for="vehicle3"> Other</label>
+                  <input type="checkbox" name="exercise" value="Boat">
+                  <label> Other</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                  <label for="vehicle3">I don't exercise</label>
+                  <input type="checkbox" name="exercise" value="Boat">
+                  <label>I don't exercise</label>
                 </div>
               </div>
             </div>
             <div class="column-flex">
 
-              <label>What is your gender?</label>
-              <select>
+              <label>Gender</label>
+              <select name="gender">
                 <option>Female</option>
                 <option>Male</option>
               </select>
 
               <label id="number-label">How many hours a day do you usually sleep?</label>
-              <input type="number" id="number" required="true" min="1" max="24" placeholder="Number of hours you sleep in a day">
+              <input type="number" name="sleep-hours" id="number" required="true" min="1" max="24" placeholder="Number of hours you sleep in a day">
 
 
               <div id="radio">
                 <label>Have you ever smoked?</label> <br><br>
                 <div>
-                  <input type="radio" id="html" name="fav_language" value="HTML">
-                  <label for="html">Yes</label>
+                  <input type="radio" name="smoked">
+                  <label >Yes</label>
                 </div>
                 <div>
-                  <input type="radio" id="css" name="fav_language" value="CSS">
-                  <label for="css">No</label>
+                  <input type="radio" name="smoked">
+                  <label>No</label>
                 </div>
               </div>
                   
