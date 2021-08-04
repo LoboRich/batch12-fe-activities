@@ -284,3 +284,15 @@ body {
 	text-decoration: none;
 	color: white;
 }
+
+#foot h1 {
+  text-align: center;
+  /* top: 24px; */
+  margin: auto;
+  width: 70%;
+  letter-spacing: 10px;
+  /* margin-top: 10px; */
+  font-size: 3em;
+  padding-top: 117px;
+  text-shadow: 1px 2px white;
+}
