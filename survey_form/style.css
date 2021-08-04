@@ -3,7 +3,6 @@
 	/*width: 95%;*/
 	flex-direction: row;
 	justify-content: center;
-  border: 1px solid;
 }
 
 .flex {
@@ -13,22 +12,18 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-  border: 1px solid;
 }
 
 .col-20 {
 	flex: 20%;
-  border: 1px solid;
 }
 
 .col-80 {
   flex: 80%;
-  border: 1px solid;
 }
 
 .col-50 {
   flex: 50%;
-  border: 1px solid;
 }
 
 .text-center {
@@ -45,12 +40,16 @@
 }
 
 #image {
+  padding: 27px 0 0 0;
 }
 
 #form div {
   padding: 10px 10px 10px 0;
 }
 
+#content div {
+  width: 96%;
+}
 /* Full-width input fields */
 input[type=text], input[type=email], input[type=number], select, textarea{
   padding: 12px;
@@ -67,7 +66,7 @@ input[type=text]:focus, input[type=email]:focus, input[type=number]:focus, selec
 }
 
 textarea {
-  width: 100%;
+  width: 96%;
 }
 
 #checkbox div{
