@@ -26,7 +26,8 @@
 }
 
 #image {
-	height: 550px;
+  max-height: 97vh;
+  overflow: auto;
 
 }
 
