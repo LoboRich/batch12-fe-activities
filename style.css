@@ -23,15 +23,15 @@ body {
 }
 
 #sidebar {
-	background-color: #FA744F;
-	height: 580px;
+	background-color: #FA7F72;
+	height: 620px;
 	position: fixed;
 	width: 200px;
 }
 
 #content {
 	 margin-left: 200px;
-	 padding: 10px;
+	 padding: 5px;
 
 }
 
@@ -46,7 +46,7 @@ ul {
 li a {
   display: block;
   color: white;
-  padding: 15px 16px;
+  padding: 10px;
   text-decoration: none;
   font-weight: bold;
   text-align: center;
@@ -84,15 +84,15 @@ li a:hover {
 #title {
 	color: white;
 	padding: 16px;
-	background-color: #024249;
+	background-color: #389393;
 	text-align: center;
 
 }
 
 #landing-page {
-	background-color: #ededed;
-	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
-	padding: 50px;
+	background-color: #EBEBEB;
+	clip-path: polygon(0 0, 100% 0%, 100% 93%, 0% 100%);
+	padding: 40px;
 }
 #portfolio {
 	background-color: #16817A;
