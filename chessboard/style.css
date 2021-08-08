@@ -1,5 +1,6 @@
 body {
 	background-color: #F4F4F4;
+
 }
 .flex {
 	display: flex;
@@ -77,4 +78,15 @@ body {
 .p2 {
 	color: #F4F4F4;
 	text-shadow: 0 3px #557571;
+}
+
+@media screen and (min-width: 200px){
+	.board{
+		border: 18px solid transparent;
+		box-shadow: 0 15px 15px -5px rgba(0,0,0,.75);
+	}
+	.square{
+		font-size: 2.5rem;
+		line-height: 56px;
+	}
 }
