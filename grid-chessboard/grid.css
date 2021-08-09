@@ -1,3 +1,6 @@
+body {
+	background-color: #F7F3E9;
+}
 .grid {
 	display: grid;
 }
@@ -7,9 +10,7 @@
 	height: 500px;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-template-rows: auto;
-	grid-template-areas:;
     margin: auto;
-    grid-gap: 1px;
     box-shadow: 0 10px 10px -5px rgb(85, 117, 113);
     border: 4vw solid transparent;
 }
@@ -23,23 +24,24 @@
 	align-items: center;
 	font-size: 2.5rem;
 	line-height: 56px;
+	padding: 2px;
 }
 
 .black-square {
-	background-color: #D49A89;
+	background-color: #5EAAA8;
 
 }
 
 .white-square {
-	background-color: #F7D1BA;
+	background-color: #A3D2CA;
 }
 
 .p1 {
-	color: #557571;
-	text-shadow: 0 3px #F4F4F4;
+	color: grey;
+	text-shadow: 0 5px #F4F4F4;
 }
 
 .p2 {
 	color: #F4F4F4;
-	text-shadow: 0 3px #557571;
+	text-shadow: 0 5px grey;
 }
