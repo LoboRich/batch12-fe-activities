@@ -1,20 +1,29 @@
 .grid {
 	display: grid;
 }
-.board {
+
+#board {
+	width: 500px;
+	height: 500px;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	grid-template-areas:;
+    margin: auto;
+    grid-gap: 1px;
+    box-shadow: 0 10px 10px -5px rgb(85, 117, 113);
+    border: 4vw solid transparent;
 }
+
 .square{
-	width: 12.5%;
-	height: 12.5%;
+	width: 60px;
+	height: 60px;
 	line-height: 12vw;
 	text-align: center;
-	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-size: 2.5rem;
 	line-height: 56px;
 }
-
 
 .black-square {
 	background-color: #D49A89;
