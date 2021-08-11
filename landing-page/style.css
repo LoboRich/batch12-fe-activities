@@ -40,9 +40,10 @@ body {
 
 #poster {
 	width: 100%; 
-	height: 100vh; 
+	height: 100vh;
 	background-image: url('./images/bg.png'); 
 	background-size: cover;
+	background-position: center center;
 }
 
 #whys {
@@ -50,6 +51,7 @@ body {
 	height: 100vh; 
 	background-image: url('./images/pages/why-bg.png');  
 	background-size: cover;
+	background-position: center center;
 }
 
 #faqs {
@@ -57,6 +59,7 @@ body {
 	height: 100vh; 
 	background-image: url('./images/pages/faq-bg.png'); 
 	background-size: cover;
+	background-position: center center;
 }
 
 #find {
@@ -67,6 +70,7 @@ body {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	background-position: center center;
 }
 
 #footer {
@@ -76,11 +80,13 @@ body {
 
 #location {
 	clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-	background-color: #D6EAF2;
-	width: 50%;
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
+    background-color: #D6EAF2;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #location-details {
@@ -100,7 +106,7 @@ body {
 
 .parallax {
   background-image: url('./images/parralax.png');
-  min-height: 500px;
+  min-height: 400px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
