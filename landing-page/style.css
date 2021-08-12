@@ -48,18 +48,23 @@ body {
 #poster {
 	height: 600px;
 	background-color: #6148BF;
+	background-image: url("./images/wave.png");
+	background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 #why {
 	background-color: white;
-	height: 600px;
+	height: auto;
 	color: #6148BF;
+	padding-bottom: 50px;
 }
 
 .card-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
+	margin: 20px;
 }
 
 .card {
@@ -67,7 +72,6 @@ body {
   padding: 20px;
   border: 1px solid rgba(0, 0, 0, 0.15);
   margin-top: 20px;
-  margin-bottom: 20px;
   border-radius: 10px;
   box-shadow: 2px 2px 14px rgb(0 0 0 / 25%);
   position: relative;
@@ -75,12 +79,19 @@ body {
   height: auto;
 }
 
+.card:hover {
+	box-shadow: 2px 2px 14px #F8485E;
+}
 .card img {
 	width: 250px;
 	height: 250px;
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
+}
+
+.card-content {
+	text-align: center;
 }
 
 #faq {
@@ -139,20 +150,10 @@ body {
 }
 
 @media only screen and (max-width: 1024px) {
-	#poster {
-		background-size: 100% 100%;
-		background-image: ""; 
-		background-color: #6148BF;
-	}
-
-	#why, #faq, #center-location, #about {
-		background-size: 100% 100%;
-
-	}
 	
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 990px) {
 	.card-container {
 		display: flex;
 		flex-direction: column;
@@ -160,15 +161,17 @@ body {
 	}
 
 	.card {
-		overflow: hidden;
 	  padding: 20px;
 	  border: 1px solid rgba(0, 0, 0, 0.15);
 	  margin-top: 50px;
 	  border-radius: 10px;
 	  box-shadow: 2px 2px 14px rgb(0 0 0 / 25%);
 	  position: relative;
-	  width: 100%;
+	  width: 80%;
 	  height: auto;
+	  margin-right: auto;
+	  margin-left: auto;
+	  display: block;
 
 	}
 }
