@@ -1,114 +1,64 @@
 body {
 	font-family: 'Gaegu', cursive;
+	background-color: white;
 }
 
 #main {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
+	display: grid;
+	height: 100vh;
+	grid-template-columns: 1fr;
+	grid-template-rows: 50px 570px 600px 600px 400px 500px 300px;
+	grid-template-areas:
+		"nav"
+		"poster"
+		"why"
+		"faq"
+		"parallax"
+		"location"
+		"footer";
 }
+
 #nav {
-	height: 60px;
+	grid-area: nav;
 	background-color: #6148BF;
-	position: absolute;
-	top: 3;
-	color: white;
-}
-
-#nav ul {
-	display: flex;
-	flex-direction: row;
-	list-style-type: none;
-	align-items: center;
-}
-
-#nav ul li {
-	text-decoration: none;
-	text-decoration: none;
-}
-
-#nav img {
-	width: 50px; 
-	height: 50px
-}
-
-.title {
-	text-align: center;
-	padding-top: 50px;
-	font-size: 2.5rem;
 }
 
 #poster {
-	width: 100%; 
-	height: 100vh;
-	background-image: url('./images/bg.png'); 
-	background-size: cover;
-	background-position: center center;
+	grid-area: poster;
+	background-color: blue;
+	background-image: url('./images/pages/figma-layout/1.png'); 
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-#whys {
-	width: 100%; 
-	height: 100vh; 
-	background-image: url('./images/pages/why-bg.png');  
-	background-size: cover;
-	background-position: center center;
+#why {
+	grid-area: why;
+	/*background-color: #6148BF;*/
+	background-image: url('./images/pages/figma-layout/7.png'); 
 }
 
-#faqs {
-	width: 100%; 
-	height: 100vh; 
-	background-image: url('./images/pages/faq-bg.png'); 
-	background-size: cover;
-	background-position: center center;
+#faq {
+	grid-area: faq;
+	/*background-color: #FFAADA;*/
+	background-image: url('./images/pages/figma-layout/8.png'); 
 }
 
-#find {
-	width: 100%; 
-	height: 100vh; 
-	background-image: url('./images/pages/find-bg.png'); 
-	background-size: cover;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	background-position: center center;
+#center-location {
+	grid-area: location;
+	/*background-color: #FFAADA;*/
+	background-image: url('./images/pages/figma-layout/9.png'); 
 }
 
-#footer {
-	height: 300px; 
+#about {
+	grid-area: footer;
 	background-color: #6148BF;
-}
-
-#location {
-	clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-    background-color: #D6EAF2;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#location-details {
-	width: 50%;
-	line-height: .5rem;
-}
-
-#location-details h2 {
-	font-size: 4rem;
-}
-
-#location-details p {
-	font-size: 2rem;
-	text-align: center;
-	color: #FFAADA;
 }
 
 .parallax {
   background-image: url('./images/parralax.png');
-  min-height: 400px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  grid-area: parallax;
 }
