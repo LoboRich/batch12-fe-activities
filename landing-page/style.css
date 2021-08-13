@@ -15,14 +15,24 @@ body {
 
 #nav {
 	display: flex;
-	flex-direction: row;
-	background-color: #6148BF;
-	height: 70px;
-	align-items: center;
+  flex-direction: row;
+  background-color: #512D6D;
+  height: 50px;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 8px;
+  right: 8px;
+  justify-content: space-between;
+  z-index: 9999;
 }
 
 #nav ul {
 	list-style: none;
+}
+
+#nav li {
+	    padding: 0 50px 0 0;
 }
 
 #items {
@@ -33,8 +43,8 @@ body {
 }
 
 #nav img {
-	width: 50px; 
-	height: 50px
+	width: 40px; 
+	height: 40px
 }
 
 /*#poster {
@@ -88,6 +98,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
+	position: relative;
 }
 
 .card-content {
@@ -96,13 +107,14 @@ body {
 
 #faq {
 	height: 600px;
-	background-color: #FFAADA;
+	background-color: #F8485E;
+	color: white;
 	/*background-image: url('./images/pages/figma-layout/8.png'); */
 }
 
 #center-location {
 	height: 500px;
-	background-color: #FFAADA;
+	background-color: #F8485E;
 	/*background-image: url('./images/pages/figma-layout/9.png'); */
 	display: flex;
 	flex-direction: row;
@@ -110,7 +122,7 @@ body {
 
 #about {
 	height: 300px;
-	background-color: #6148BF;
+	background-color: #512D6D;
 }
 
 .parallax {
@@ -124,18 +136,19 @@ body {
 }
 
 .parallax2 {
+	background-image: url('./images/parralax.png');
   background-color: white;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 300px;
+  height: 400px;
 }
 
 #locate-img {
 	width: 50%;
 	clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-  background-color: #00C1D4;
+  background-color: white;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -148,6 +161,66 @@ body {
 #locate-content {
 	width: 50%;
 }
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  margin-top: 50px;
+  text-align: center;
+  flex-direction: row;
+  height: auto;
+  justify-content: space-evenly;
+}
+
+.slides-card {
+	width: 40%;
+	padding: 20px;
+	box-shadow: 0 0 10px rgb(238 238 238);
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: white;
+  color: #512D6D;
+}
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: cornflowerblue;}
 
 @media only screen and (max-width: 1024px) {
 	
