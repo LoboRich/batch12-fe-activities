@@ -32,7 +32,13 @@ body {
 }
 
 #nav li {
-	    padding: 0 50px 0 0;
+	  padding: 0 50px 0 0;
+}
+
+#nav li a {
+
+	 	text-decoration: none;
+	 	color: white;
 }
 
 #items {
@@ -47,6 +53,12 @@ body {
 	height: 40px
 }
 
+.hamburger-icon{
+	color: white;
+	font-size: 2rem;
+	display: none;
+}
+
 /*#poster {
 	grid-area: poster;
 	background-color: blue;
@@ -57,17 +69,69 @@ body {
 
 #poster {
 	height: 600px;
-	background-color: #6148BF;
+	background-color: #512D6D;
 	background-image: url("./images/wave.png");
 	background-repeat: no-repeat;
   background-size: 100% 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 100px 10px 0 0;
+}
+
+#poster-title {
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+}
+
+#poster-title {
+	line-height: 10px;
+}
+
+#poster-title button {
+  background-color: #512d6d;
+  box-shadow: 0 2px 6px #512d6d;
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  padding: 20px;
+  border-radius: 7px;
+  width: 50%;
+  margin: 50px auto 0 auto;
+}
+
+#poster-img {
+	width: 40%;
+}
+
+#poster-img img {
+	width: 90%;
+	height: 90%;
+}
+#tagline {
+	font-size: 5rem;
+	color: white;
+	text-align: center;
+	text-shadow: 2px 2px 2px white;
+}
+
+#tagline2 {
+	font-size: 5rem;
+	color: #F8485E;
+	text-align: center;
+	text-shadow: 2px 2px 2px white;
 }
 
 #why {
 	background-color: white;
 	height: auto;
 	color: #6148BF;
-	padding-bottom: 50px;
+	padding-bottom: 60px;
+	padding-top: 60px;
 }
 
 .card-container {
@@ -89,6 +153,8 @@ body {
   height: auto;
 }
 
+
+
 .card:hover {
 	box-shadow: 2px 2px 14px #F8485E;
 }
@@ -109,12 +175,13 @@ body {
 	height: 600px;
 	background-color: #F8485E;
 	color: white;
+	padding-top: 60px;
 	/*background-image: url('./images/pages/figma-layout/8.png'); */
 }
 
 #center-location {
-	height: 500px;
-	background-color: #F8485E;
+	height: 600px;
+	background-color: #512D6D;
 	/*background-image: url('./images/pages/figma-layout/9.png'); */
 	display: flex;
 	flex-direction: row;
@@ -123,6 +190,16 @@ body {
 #about {
 	height: 300px;
 	background-color: #512D6D;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	padding: 50px;
+	color: white;
+}
+
+#about div {
+	width: 50%;
+	padding: 50px;
 }
 
 .parallax {
@@ -155,11 +232,14 @@ body {
 }
 
 #locate-img img{
-	width: 50%;
-	height: 50%;
+	width: 70%;
+	height: 70%;
+	margin: 75px 0 75px 35px;
 }
 #locate-content {
 	width: 50%;
+
+  color: white;
 }
 
 /* Slideshow container */
@@ -216,17 +296,8 @@ body {
   color: #512D6D;
 }
 
-/* Add an italic font style to all quotes */
-q {font-style: italic;}
 
-/* Add a blue color to the author */
-.author {color: cornflowerblue;}
-
-@media only screen and (max-width: 1024px) {
-	
-}
-
-@media only screen and (max-width: 990px) {
+@media only screen and (min-width: 991px) {
 	.card-container {
 		display: flex;
 		flex-direction: column;
@@ -246,5 +317,151 @@ q {font-style: italic;}
 	  margin-left: auto;
 	  display: block;
 
+	}
+
+	#about {
+		height: auto;
+	}
+}
+
+@media only screen and (min-width: 661px) and (max-width: 990px) {
+
+	#poster-title {
+
+	}
+
+	#tagline, #tagline2 {
+		font-size: 3rem;
+	}
+
+	#poster-img img {
+		width: 250px;
+		height: 250px;
+		margin: 80px 0 0 0 ;
+	}
+}
+
+@media only screen and (max-width: 660px) {
+	.hamburger-icon{
+		display: block;
+	}
+
+	#items{
+		display: none;
+	}
+
+	#poster {
+		background-image: none;
+  	flex-direction: column;
+  	height: auto;
+	}
+
+	
+	#poster-title {
+		width: 100%;
+		line-height: 10px;
+	}
+
+	#poster-title button {
+		background-color: #F8485E;
+		color: white;
+	}
+
+	#poster-img {
+		width: 100%;
+	}
+
+	#poster-img img {
+		width: 300px;
+		height: 300px;
+		margin-right: auto;
+		margin-left: auto;
+		display: block;
+	}
+	#tagline {
+		font-size: 3rem;
+		text-shadow: none;
+	}
+
+	#tagline2 {
+		font-size: 3rem;
+		text-shadow: none;
+	}
+
+	#about {
+		flex-direction: column;
+		justify-content: space-around;
+		height: auto;
+
+	}
+
+	#about div {
+		margin-right: auto;
+		margin-left: auto;
+		display: block;
+		width: 100%;
+		padding: 20px;
+		height: auto;
+	}
+
+
+}
+
+
+@media only screen and (max-width: 375px) {
+	.hamburger-icon{
+		display: block;
+	}
+
+	#items{
+		display: none;
+	}
+
+	.title {
+		font-size: 2rem;
+	}
+
+	#poster {
+		background-image: none;
+  	flex-direction: column;
+  	height: auto;
+	}
+
+	#poster-title {
+		width: 100%;
+		line-height: 10px;
+	}
+
+	#poster-title button {
+		background-color: #F8485E;
+		color: white;
+	}
+
+	#tagline {
+		text-shadow: none;
+	}
+
+	#tagline2 {
+		text-shadow: none;
+	}
+	
+	#poster-img {
+		width: 100%;
+	}
+
+	#poster-img img {
+		width: 300px;
+		height: 300px;
+		margin-right: auto;
+		margin-left: auto;
+		display: block;
+	}
+
+	#tagline {
+		font-size: 2rem;
+	}
+
+	#tagline2 {
+		font-size: 2rem;
 	}
 }

@@ -13,24 +13,42 @@
 </head>
 <body>
 	<div id="main">
-		<div id="nav">
+		<div class="topnav" id="nav">
 			<ul id="logo">
 				<li><img src="./images/vax.png"></li>
 			</ul>
 			<ul id="items">
-				<li>Why's</li>
-				<li>Faqs</li>
-				<li>Find</li>
-				<li>About Us</li>
+				<li><a href="#why">Why</a></li>
+				<li><a href="#faq">Faqs</a></li>
+				<li><a href="#center-location">Centers</a></li>
+				<li><a href="#about">About Us</a></li>
 			</ul>
+
+			 <ul>
+			 	<li><a href="javascript:void(0);" class="hamburger-icon" onclick="myFunction()">
+			    <i class="fa fa-bars"></i>
+			  </a></li>
+			 </ul>
 		</div>
+
+
 		<div id="poster">
-			
+			<div id="poster-title">
+				<h1 id="tagline">GET VACCINATED</h1>
+				<h1 id="tagline2">SAVE THE WORLD</h1>
+				
+
+				<button>Register Now</button>
+			</div>
+	
+			<div id="poster-img">
+				<img src="./images/poster-img.png">
+			</div>
 		</div>
 		<div id="why">
 			<h1 class="title">Why does the world need you to get vaccinated?</h1>
 			<div class="card-container">
-				<div class="card">
+				<div class="card animatable moveUp">
 					<div class="card-img"><img src="./images/raw/1.png"></div>
 					<div class="card-content">
 						<h2>REDUCE</h2>
@@ -38,7 +56,7 @@
 					</div>
 				</div>
 
-				<div class="card">
+				<div class="card animatable moveUp">
 					<div class="card-img"><img src="./images/raw/2.png"></div>
 					<div class="card-content">
 						<h2>PROTECT</h2>
@@ -47,7 +65,7 @@
 					
 				</div>
 
-				<div class="card">
+				<div class="card animatable moveUp">
 					<div class="card-img"><img src="./images/raw/3.png"></div>
 					<div class="card-content">
 						<h2>RECONNECT</h2>
@@ -117,7 +135,6 @@
 			</div>
 
 		</div>
-		<div class="parallax"></div>
 		<div id="center-location">
 			<div id="locate-img">
 				<img src="./images/location.png">
@@ -131,37 +148,60 @@
 			</div>
 		</div>
 
-		<div class="parallax2">This is an example of churvanes</div>
-		<footer id="about">about</footer>
+		<div class="parallax2"></div>
+		<footer id="about">
+			<div id="mission">
+				<h2>Our Mission</h2>
+				<p>This is an example of nonsense mission. This is an example of nonsense mission. This is an example of nonsense mission.</p>
+				<div id="socmed">
+					
+				</div>
+			</div>
+
+			<div id="contact">
+				<h2>Contact Us</h2>
+				<h3>This is an example of nonsense mission.</h3>
+			</div>
+		</footer>
 	</div>
 
 	<script>
-	var slideIndex = 1;
-	showSlides(slideIndex);
+		var slideIndex = 1;
+		showSlides(slideIndex);
 
-	function plusSlides(n) {
-	  showSlides(slideIndex += n);
-	}
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
 
-	function currentSlide(n) {
-	  showSlides(slideIndex = n);
-	}
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
 
-	function showSlides(n) {
-	  var i;
-	  var slides = document.getElementsByClassName("mySlides");
-	  var dots = document.getElementsByClassName("dot");
-	  if (n > slides.length) {slideIndex = 1}    
-	  if (n < 1) {slideIndex = slides.length}
-	  for (i = 0; i < slides.length; i++) {
-	      slides[i].style.display = "none";  
-	  }
-	  for (i = 0; i < dots.length; i++) {
-	      dots[i].className = dots[i].className.replace(" active", "");
-	  }
-	  slides[slideIndex-1].style.display = "flex";  
-	  dots[slideIndex-1].className += " active";
-	}
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("mySlides");
+		  var dots = document.getElementsByClassName("dot");
+		  if (n > slides.length) {slideIndex = 1}    
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+		      slides[i].style.display = "none";  
+		  }
+		  for (i = 0; i < dots.length; i++) {
+		      dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "flex";  
+		  dots[slideIndex-1].className += " active";
+		}
+
+		function myFunction() {
+		  var x = document.getElementById("nav");
+		  if (x.className === "topnav") {
+		    x.className += " responsive";
+		  } else {
+		    x.className = "topnav";
+		  }
+		}
+
 	</script>
 </body>
 </html>
