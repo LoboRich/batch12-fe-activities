@@ -1,5 +1,7 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,900);
+
 body {
-	font-family: 'Gaegu', cursive;
+	font-family: 'Roboto', sans-serif;
 	background-color: white;
 }
 
@@ -15,24 +17,25 @@ body {
 #nav {
 	display: flex;
   flex-direction: row;
-  background-color: #512D6D;
   height: 50px;
   align-items: center;
   position: fixed;
   top: 0;
   left: 8px;
   right: 8px;
-  justify-content: stretch;
   z-index: 9999;
+  padding-bottom: 40px;
 }
 
 #nav ul {
 	list-style: none;
+	position: absolute;
+	top: 20px;
 }
 
 #nav li a:hover {
 	 background-color: white;
-	 color: #512D6D;
+	 color: black;
 }
 
 #nav li a {
@@ -40,6 +43,9 @@ body {
 	 	text-decoration: none;
 	 	color: white;
 	 	padding: 10px	;
+	 	font-weight: 900;
+	  text-transform: uppercase;
+	  transform: translate(-50%, -50%);
 }
 
 #items {
@@ -61,32 +67,21 @@ body {
 	display: none;
 }
 
-/*#poster {
-	grid-area: poster;
-	background-color: blue;
-	background-image: url('./images/pages/figma-layout/1.png'); 
-  background-repeat: no-repeat;
-  background-size: cover;
-}*/
 
 #poster {
-	background-color: #512D6D; /* For browsers that do not support gradients */
-  background-image: linear-gradient(to bottom right, #512D6D, white);
-	/*background-image: url("./images/wave.png");*/
+	height: 600px;
 	background-repeat: no-repeat;
   background-size: 100% 100%;
 
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 90px 10px 0 10px;
-  align-items: flex-start;
+  background: 
+    linear-gradient(
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.6)
+  ),
+  url("./images2/poster.webp");
 }
 
 
-#poster-title {
-	width: 60%;
-}
 
 #poster-title {
 	line-height: 10px;
@@ -116,23 +111,22 @@ body {
 }
 
 #tagline {
-	font-size: 5rem;
-	color: white;
-	text-align: center;
-	text-shadow: 2px 2px 2px white;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 4rem;
+  transform: translate(-50%, -50%);
 }
 
-#tagline2 {
-	font-size: 5rem;
-	color: #F8485E;
-	text-align: center;
-	text-shadow: 2px 2px 2px white;
-}
 
 #why {
-	background-color: white;
-	height: auto;
-	color: #6148BF;
+	/*background-color: white;*/
+	height: 600px;
+	color: black;
 	padding-bottom: 60px;
 	padding-top: 60px;
 }
@@ -161,6 +155,7 @@ body {
 .card:hover {
 	box-shadow: 2px 2px 14px #F8485E;
 }
+
 .card img {
 	width: 250px;
 	height: 250px;
@@ -174,82 +169,99 @@ body {
 	text-align: center;
 }
 
-#faq {
+#reviews {
 	height: 600px;
-	background-color: #F8485E;
+	background-color: #CF7500;
 	color: white;
-	padding-top: 60px;
+	padding-top: 50px;
 	/*background-image: url('./images/pages/figma-layout/8.png'); */
 }
 
-#center-location {
-	height: 600px;
-	background-color: #512D6D;
-	/*background-image: url('./images/pages/figma-layout/9.png'); */
-	display: flex;
-	flex-direction: row;
-}
-
-#about {
+#franchise {
 	height: 300px;
-	background-color: #512D6D;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
+	background-color: black;
 	padding: 50px;
-	color: white;
+
 }
 
-#about div {
+#franchise-form {
 	width: 50%;
-	padding: 50px;
-}
-
-.parallax {
-  background-image: url('./images/parralax.png');
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 400px;
-
-}
-
-.parallax2 {
-	background-image: url('./images/parralax.png');
-  background-color: white;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 400px;
-}
-
-#locate-img {
-	width: 50%;
-	clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-  background-color: white;
+  color: white;
   margin-left: auto;
   margin-right: auto;
-  display: block;
-}
-
-#locate-img img{
-	width: 70%;
-	height: 70%;
-	margin: 75px 0 75px 35px;
-}
-#locate-content {
-	width: 50%;
-
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+footer {
+	height: 200px;
+	background-color: white;
+	display: flex;
+	flex-direction: row;
+	padding: 50px;
+	color: black;
+	justify-content: center;
+}
+
+footer div {
+	width: 50%;
+	text-align: center;
+}
+
+footer h2 {
+	color: #CF7500;
+}
+
+#socmed {
+	display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+}
+
+#socmed li {
+	margin: 5px 5px 0;
+}
+
+#socmed i{
+    color: #CF7500;
+    border-radius: 100%;
+    border: 2px solid;
+    border-color: #1a1a1a;
+    border-color: var(--colorTextBody);
+    padding: 14px;
+    line-height: 1;
+    font-size: 2rem;
+
+}
+
+#reasons {
+	height: 500px;
+	background-color: #F4F4F4;
+	padding: 50px;
+}
+
+
+.parallax {
+  background-image: url('./images2/parallax-bg.jpg');
+  background-color: white;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+
 }
 
 /* Slideshow container */
 .slideshow-container {
   position: relative;
 
-  width: 80%;
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
   display: block;
@@ -266,8 +278,8 @@ body {
 }
 
 .slides-card {
-	width: 40%;
-	padding: 20px;
+	width: 50%;
+	padding: 50px;
 	box-shadow: 0 0 10px rgb(238 238 238);
 }
 
@@ -302,19 +314,7 @@ body {
 
 @media only screen and (max-width: 661px) {
 
-	#poster-title {
-
-	}
-
-	#tagline, #tagline2 {
-		font-size: 3rem;
-	}
-
-	#poster-img img {
-		width: 250px;
-		height: 250px;
-		margin: 80px 0 0 0 ;
-	}
+	
 }
 
 @media only screen and (max-width: 660px) {
@@ -330,82 +330,6 @@ body {
 		display: none;
 	}
 
-	#poster {
-		background-image: none;
-  	flex-direction: column;
-  	height: auto;
-
-  	padding: 10px;
-	}
-
-	
-	#poster-title {
-		width: 100%;
-		line-height: 10px;
-	}
-
-	#poster-title button {
-		background-color: #F8485E;
-		color: white;
-	}
-
-	#poster-img {
-		width: 100%;
-	}
-
-	#poster-img img {
-		width: 300px;
-		height: 300px;
-		margin-right: auto;
-		margin-left: auto;
-		display: block;
-	}
-	#tagline {
-		font-size: 3rem;
-		text-shadow: none;
-	}
-
-	#tagline2 {
-		font-size: 3rem;
-		text-shadow: none;
-	}
-
-	#about {
-		flex-direction: column;
-		justify-content: space-around;
-		height: auto;
-
-	}
-
-	#about div {
-		margin-right: auto;
-		margin-left: auto;
-		display: block;
-		width: 100%;
-		padding: 20px;
-		height: auto;
-	}
-
-	.card-container {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-	}
-
-	.card {
-	  padding: 20px;
-	  border: 1px solid rgba(0, 0, 0, 0.15);
-	  margin-top: 50px;
-	  border-radius: 10px;
-	  box-shadow: 2px 2px 14px rgb(0 0 0 / 25%);
-	  position: relative;
-	  width: 80%;
-	  height: auto;
-	  margin-right: auto;
-	  margin-left: auto;
-	  display: block;
-
-	}
 
 }
 
@@ -423,51 +347,5 @@ body {
 		display: none;
 	}
 
-	.title {
-		font-size: 2rem;
-	}
 
-	#poster {
-		background-image: none;
-  	flex-direction: column;
-  	height: auto;
-	}
-
-	#poster-title {
-		width: 100%;
-		line-height: 10px;
-	}
-
-	#poster-title button {
-		background-color: #F8485E;
-		color: white;
-	}
-
-	#tagline {
-		text-shadow: none;
-	}
-
-	#tagline2 {
-		text-shadow: none;
-	}
-	
-	#poster-img {
-		width: 100%;
-	}
-
-	#poster-img img {
-		width: 300px;
-		height: 300px;
-		margin-right: auto;
-		margin-left: auto;
-		display: block;
-	}
-
-	#tagline {
-		font-size: 2rem;
-	}
-
-	#tagline2 {
-		font-size: 2rem;
-	}
 }
