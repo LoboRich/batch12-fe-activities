@@ -223,7 +223,6 @@ body {
 .btn {
   font-weight: 900;
   padding: 15px;
-  letter-spacing: .5px;
   border: 0;
   border-radius: 5px;
   width: 100%;
@@ -414,10 +413,7 @@ footer h2 {
 }
 
 
-@media only screen and (max-width: 661px) {
 
-	
-}
 
 @media only screen and (max-width: 660px) {
 	.hamburger-icon{
@@ -451,3 +447,54 @@ footer h2 {
 
 
 }
+
+/*Desktops & Large screens*/
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {}
+
+/*Small screens & Laptops*/
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+	#tagline {
+		font-size: 3rem;
+	}
+}
+
+/*Ipads and Tablets*/
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+	.hamburger-icon{
+		display: block;
+	}
+
+	#nav {
+		justify-content: space-between;
+	}
+
+	#items{
+		display: none;
+	}
+
+	#tagline {
+		font-size: 2rem;
+	}
+}
+
+/*Mobile Devises*/
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+	.hamburger-icon{
+		display: block;
+	}
+
+	#nav {
+		justify-content: space-between;
+	}
+
+	#items{
+		display: none;
+	}
+
+	#tagline {
+		font-size: 1rem;
+	}
+}
+
+
+
