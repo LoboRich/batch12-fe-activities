@@ -33,6 +33,11 @@ body {
 	top: 20px;
 }
 
+#nav .active a{
+	background-color: white;
+	color: black;
+}
+
 #nav li a:hover {
 	 background-color: white;
 	 color: black;
@@ -213,18 +218,46 @@ body {
   padding: 15px;
   letter-spacing: .5px;
   border: 0;
-  border-radius: 8px;
+  border-radius: 5px;
   width: 100%;
-  background-color: #F0A500;
+  background-color: #CF7500;
   color: white;
 }
 
 
 .btn:hover {
 	/*box-shadow: 0 2px 6px #008CBA;*/
-	background-color: #CF7500;
+	background-color: #F0A500;
 	color: white;
 }
+
+
+#franchise-form form {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
+input[type=text], input[type=email]{
+	padding: 12px;
+	margin: 3px 0 13px 0;
+	display: inline-block;
+	border: 1px solid #CF7500;
+	border-radius: 5px;
+	width: 95%;
+	color: #CF7500;
+	font-size: 1rem;
+}
+
+
+input[type=text]:focus, input[type=email]:focus{
+  outline: none;
+  box-shadow: 0 0px 2px #CF7500;
+}
+
 
 footer {
 	height: 200px;
@@ -269,11 +302,32 @@ footer h2 {
 }
 
 #reasons {
-	height: 500px;
 	background-color: #F4F4F4;
 	padding: 50px;
 }
 
+.reasons-div {
+	width: 90%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 50px;
+}
+
+.reasons-div div {
+	margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 50%;
+  padding: 5%;
+}
+.reasons-div img {
+	width: 300px;
+	height: 300px;
+	margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
 
 .parallax {
   background-image: url('./images2/parallax-bg.jpg');
@@ -304,6 +358,13 @@ footer h2 {
   flex-direction: row;
   height: auto;
   justify-content: space-evenly;
+}
+
+.mySlides svg {
+	width: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .slides-card {
