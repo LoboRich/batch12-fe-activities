@@ -184,12 +184,20 @@ body {
 	text-align: center;
 }
 
+.card-content p{
+	font-size: 0.8rem;
+}
+
 #reviews {
 	height: 600px;
 	background-color: #CF7500;
 	color: white;
 	padding-top: 50px;
 	/*background-image: url('./images/pages/figma-layout/8.png'); */
+}
+
+#reviews h3 {
+	font-style: italic;
 }
 
 #franchise {
@@ -214,7 +222,6 @@ body {
 
 .btn {
   font-weight: 900;
-  font-size: 12px;
   padding: 15px;
   letter-spacing: .5px;
   border: 0;
@@ -312,6 +319,11 @@ footer h2 {
 	flex-direction: row;
 	justify-content: space-between;
 	padding: 50px;
+}
+
+.reasons-div img {
+	box-shadow: 0 2px 13px;
+	border-radius: 5px;
 }
 
 .reasons-div div {
