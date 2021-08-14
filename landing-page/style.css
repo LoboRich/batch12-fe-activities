@@ -110,7 +110,7 @@ body {
 	height: 90%;
 }
 
-#tagline {
+#tagline{
   font-weight: 900;
   color: white;
   text-transform: uppercase;
@@ -122,8 +122,20 @@ body {
   transform: translate(-50%, -50%);
 }
 
+#tagline-span {
+	font-weight: 900;
+	text-transform: uppercase;
+  color: white;
+  margin: 0;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  font-size: 1rem;
+  transform: translate(-50%, -50%);
+}
 
-#why {
+
+#preferece {
 	/*background-color: white;*/
 	height: 600px;
 	color: black;
@@ -150,15 +162,13 @@ body {
   height: auto;
 }
 
-
-
 .card:hover {
-	box-shadow: 2px 2px 14px #F8485E;
+	box-shadow: 2px 2px 14px #F0A500;
 }
 
 .card img {
-	width: 250px;
-	height: 250px;
+	width: 200px;
+	height: 200px;
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
@@ -195,6 +205,25 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.btn {
+  font-weight: 900;
+  font-size: 12px;
+  padding: 15px;
+  letter-spacing: .5px;
+  border: 0;
+  border-radius: 8px;
+  width: 100%;
+  background-color: #F0A500;
+  color: white;
+}
+
+
+.btn:hover {
+	/*box-shadow: 0 2px 6px #008CBA;*/
+	background-color: #CF7500;
+	color: white;
 }
 
 footer {
