@@ -74,16 +74,14 @@ body {
 
 
 #poster {
-	height: 600px;
-	background-repeat: no-repeat;
-  background-size: 100% 100%;
-
-  background: 
-    linear-gradient(
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.6)
-  ),
-  url("./images2/poster.webp");
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 600px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url(./images2/poster.webp);
 }
 
 
@@ -269,16 +267,14 @@ footer {
 	height: 200px;
 	background-color: white;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	padding: 50px;
 	color: black;
 	justify-content: center;
-}
-
-footer div {
-	width: 50%;
+	align-items: center;
 	text-align: center;
 }
+
 
 footer h2 {
 	color: #CF7500;
@@ -413,48 +409,45 @@ footer h2 {
 }
 
 
-
-
-@media only screen and (max-width: 660px) {
-	.hamburger-icon{
-		display: block;
-	}
-
-	#nav {
-		justify-content: space-between;
-	}
-
-	#items{
-		display: none;
-	}
-
-
-}
-
-
-@media only screen and (max-width: 375px) {
-	.hamburger-icon{
-		display: block;
-	}
-
-	#nav {
-		justify-content: space-between;
-	}
-
-	#items{
-		display: none;
-	}
-
-
-}
-
 /*Desktops & Large screens*/
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {}
 
 /*Small screens & Laptops*/
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
+
+
 	#tagline {
-		font-size: 3rem;
+		font-size: 3.5rem;
+	}
+
+	#items li a {
+		font-size: .8rem;
+	}
+
+	#preferece {
+    height: auto;
+	}
+	.card-container {
+		flex-direction: column;
+    width: 100%;
+	}
+
+	.card {
+		width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+	}
+
+	#franchise {
+		height: auto;
+	}
+
+	#franchise form {
+		width: 100%;
+	}
+
+	#franchise-form h1 {
+		font-size: 1.5rem;
 	}
 }
 
@@ -465,7 +458,13 @@ footer h2 {
 	}
 
 	#nav {
-		justify-content: space-between;
+    left: 0px;
+    padding: 20px 0 20px 0;
+	}
+
+	#nav a{
+		font-size: 3rem;
+		margin-left: 50px;
 	}
 
 	#items{
@@ -474,6 +473,37 @@ footer h2 {
 
 	#tagline {
 		font-size: 2rem;
+	}
+
+	#preferece {
+
+    height: auto;
+	}
+
+	#franchise-form h1 {
+		font-size: 1.4rem;
+	}
+	.card-container {
+		flex-direction: column;
+    width: 100%;
+	}
+
+	.card {
+		width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+	}
+
+	#franchise {
+		height: auto;
+	}
+
+	#franchise form {
+		width: 100%;
+	}
+
+	#franchise-form h1 {
+		font-size: 1.5rem;
 	}
 }
 
@@ -484,7 +514,13 @@ footer h2 {
 	}
 
 	#nav {
-		justify-content: space-between;
+    left: 0px;
+    padding: 20px 0 20px 0;
+	}
+
+	#nav a{
+		font-size: 3rem;
+		margin-left: 50px;
 	}
 
 	#items{
@@ -492,7 +528,67 @@ footer h2 {
 	}
 
 	#tagline {
+		font-size: 1.5rem;
+	}
+
+	#tagline-span {
+		font-size: .6rem;
+	}
+
+	#preferece {
+
+    height: auto;
+	}
+	.card-container {
+		flex-direction: column;
+    width: 100%;
+	}
+
+	.card {
+		width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+	}
+
+	#franchise {
+		height: auto;
+	}
+
+	#franchise-form {
+		width: 100%;
+	}
+
+	#franchise form {
+		width: 100%;
+	}
+
+	#franchise-form h1 {
+		font-size: 1.1rem;
+	}
+
+	.title {
 		font-size: 1rem;
+	}
+
+	#reviews {
+		height: auto;
+    padding-bottom: 50px;
+	}
+
+	#about {
+		height: auto;
+	}
+
+	footer div {
+		width: 90%;
+	}
+
+	#socmed i {
+		font-size: 1rem;
+	}
+
+	.slides-card h3 {
+		font-size: .8rem;
 	}
 }
 
