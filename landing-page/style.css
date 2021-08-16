@@ -458,6 +458,12 @@ footer h2 {
   
 }
 
+#policies {
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+}
+
 
 /*Desktops & Large screens*/
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {}
