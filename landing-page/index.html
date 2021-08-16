@@ -161,7 +161,7 @@
 	</div>
 
 	<script>
-
+		let small_screens = window.matchMedia("only screen and (max-width: 760px)").matches;
 		var nav = document.getElementById('myTopnav'); // Identify target
 		
 
@@ -178,18 +178,6 @@
 		    }
 		});
 
-		// Initial state
-		var scrollPos = 0;
-		// adding scroll event
-		window.addEventListener('scroll', function(){
-		  // detects new state and compares it with the new one
-		  if ((document.body.getBoundingClientRect()).top > scrollPos)
-				nav.style.top = '0px'
-			else
-				nav.style.top = "20px"
-			// saves the new position for iteration.
-			scrollPos = (document.body.getBoundingClientRect()).top;
-		});
 
 		var slideIndex = 1;
 		showSlides(slideIndex);
