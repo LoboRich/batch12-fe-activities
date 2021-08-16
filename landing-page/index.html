@@ -170,11 +170,25 @@
 
 		    if (window.scrollY <= 250) { // Just an example
 		        nav.style.backgroundColor = 'transparent'; // or default color
-		        
+		        // nav.style.top = '0px'
 		    } else {
 		        nav.style.backgroundColor = 'black';
+		        // nav.style.top = "20px"
 		        
 		    }
+		});
+
+		// Initial state
+		var scrollPos = 0;
+		// adding scroll event
+		window.addEventListener('scroll', function(){
+		  // detects new state and compares it with the new one
+		  if ((document.body.getBoundingClientRect()).top > scrollPos)
+				nav.style.top = '0px'
+			else
+				nav.style.top = "20px"
+			// saves the new position for iteration.
+			scrollPos = (document.body.getBoundingClientRect()).top;
 		});
 
 		var slideIndex = 1;
