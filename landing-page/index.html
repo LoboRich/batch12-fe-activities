@@ -11,21 +11,18 @@
 </head>
 <body>
 	<div id="main">
-		<div class="topnav" id="nav">
-			<ul id="items">
-				<li class="active"><a href="#poster">MSTR BEANS</a></li>
-				<li><a href="#preferece">GUIDE</a></li>
-				<li><a href="#reasons">WHY OUR COFFEE</a></li>
-				<li><a href="#reviews">REVIEWS</a></li>
-				<li><a href="#franchise">FRANCHISE</a></li>
-				<li><a href="#about">CONTACT US</a></li>
-				<li><a href="#franchise">SHOP</a></li>
-			</ul>
-
-			 <a href="javascript:void(0);" class="hamburger-icon" onclick="myFunction()">
-			    <i class="fa fa-bars"></i>
-			  </a>
-		</div>
+		<nav class="topnav" id="myTopnav">
+		  <a href="#poster">MSTR BEANS</a>
+		  <a href="#preferece">GUIDE</a>
+		  <a href="#reasons">WHY OUR COFFEE</a>
+		  <a href="#reviews">REVIEWS</a>
+		  <a href="#franchise">FRANCHISE</a>
+		  <a href="#about">CONTACT US</a>
+		  <a href="#franchise">SHOP</a>
+		  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+		    <i class="fa fa-bars"></i>
+		  </a>
+		</nav>
 
 
 		<div id="poster">
@@ -163,7 +160,7 @@
 
 	<script>
 
-		var nav = document.getElementById('nav'); // Identify target
+		var nav = document.getElementById('myTopnav'); // Identify target
 		var nav_items = document.getElementById('items');
 
 		window.addEventListener('scroll', function(event) { // To listen for event
@@ -208,7 +205,7 @@
 		}
 
 		function myFunction() {
-		  var x = document.getElementById("nav");
+		  var x = document.getElementById("myTopnav");
 		  if (x.className === "topnav") {
 		    x.className += " responsive";
 		  } else {
