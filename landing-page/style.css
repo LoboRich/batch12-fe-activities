@@ -343,34 +343,24 @@ footer h2 {
 #reasons {
 	background-color: #F4F4F4;
 	padding: 50px;
+	display: flex;
+	flex-direction: column;
 }
 
-.reasons-div {
-	width: 90%;
+.reasons-content {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	flex-wrap: wrap;
 	padding: 50px;
+	text-align: center;
 }
 
-.reasons-div img {
-	box-shadow: 0 2px 13px;
-	border-radius: 5px;
-}
-
-.reasons-div div {
+.reasons-content div {
+	width: 40%;
+	padding: 30px;
 	margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  width: 50%;
-  padding: 5%;
-}
-.reasons-div img {
-	width: 300px;
-	height: 300px;
-	margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+	margin-right: auto;
+	display: block;
 }
 
 .parallax {
@@ -445,6 +435,28 @@ footer h2 {
   color: #512D6D;
 }
 
+.reasons-vid {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 80%;
+  height: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border: none;
+  
+}
+
 
 /*Desktops & Large screens*/
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {}
@@ -497,7 +509,7 @@ footer h2 {
   }
   .topnav.responsive {position: fixed;}
   .topnav.responsive .icon {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
   }
@@ -564,6 +576,15 @@ footer h2 {
 /*Mobile Devises*/
 @media only screen and (min-width: 320px) and (max-width: 480px) {
 
+	.reasons-content {
+		padding: 0px;
+	}
+
+	.reasons-content div {
+		width: 100%;
+		padding: 30px;
+	}
+
 	.topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
     float: right;
@@ -571,8 +592,8 @@ footer h2 {
   }
   .topnav.responsive {position: fixed;}
   .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
+    position: fixed;
+    right: 8px;
     top: 0;
   }
   .topnav.responsive a {

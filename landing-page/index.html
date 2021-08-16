@@ -69,36 +69,30 @@
 
 		<div id="reasons">
 			<h1 class="title">WHY OUR COFFEE</h1>
-			<div class="reasons-div">
-				<img src="./images2/handpicked.jpg">
+			
+			<div class="reasons-content">
+				
 				<div>
-					<h2>TOP #1 of the Worlds Coffee</h2>
+					<h5><i style="color: #CF7500;" class="fa fa-star"></i>TOP #1 of the Worlds Coffee</h5>
 					<p>Specialty grade, single origin and handpicked at peak ripeness for the highest quality.</p>
 				</div>
-			</div>
-
-			<div class="reasons-div">
 				<div>
-					<h2>Coffee you can't find elsewhere</h2>
+					<h5><i style="color: #CF7500;" class="fa fa-star"></i>Coffee you can't find elsewhere</h5>
 					<p>Specialty grade, single origin and handpicked at peak ripeness for the highest quality.</p>
 				</div>
-				<img src="./images2/map.jpg">
-			</div>
-
-			<div class="reasons-div">
-				<img src="./images2/roasted.jpeg">
 				<div>
-					<h2>Roasted fresh to order</h2>
+					<h5><i style="color: #CF7500;" class="fa fa-star"></i>Roasted fresh to order</h5>
 					<p>Always roasted to your preference. Maximum freshness, maximum flavor.</p>
 				</div>
-			</div>
-
-			<div class="reasons-div">
 				<div>
-					<h2>Delivered on your schedule</h2>
+					<h5><i style="color: #CF7500;" class="fa fa-star"></i>Delivered on your schedule</h5>
 					<p>Skip your delivery date at anytime, and set schedule that works for you.</p>
 				</div>
-				<img src="./images2/delivery.jpg">
+			</div>
+
+			<div class="reasons-vid">
+
+			  <iframe class="responsive-iframe" src="https://www.youtube.com/embed/faTsRV7bkEc"></iframe>
 			</div>
 		</div>
 
@@ -161,19 +155,17 @@
 	<script>
 
 		var nav = document.getElementById('myTopnav'); // Identify target
-		var nav_items = document.getElementById('items');
+		
 
 		window.addEventListener('scroll', function(event) { // To listen for event
 		    event.preventDefault();
 
 		    if (window.scrollY <= 250) { // Just an example
 		        nav.style.backgroundColor = 'transparent'; // or default color
-		        nav.style.paddingBottom = '40px';
-		        nav_items.style.top = '20px'
+		        
 		    } else {
 		        nav.style.backgroundColor = 'black';
-		        nav.style.paddingBottom = '0px';
-		        nav_items.style.top = '0px'
+		        
 		    }
 		});
 
@@ -212,7 +204,6 @@
 		    x.className = "topnav";
 		  }
 		}
-
 
 
 	</script>
