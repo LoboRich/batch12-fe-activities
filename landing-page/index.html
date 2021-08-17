@@ -164,9 +164,9 @@
 	<script>
 
 
-		let small_screens = window.matchMedia("only screen and (min-width: 320px) and (max-width: 480px)").matches;
+		let small_screens = window.matchMedia("only screen and (min-width: 320px) and (max-width: 768px)").matches;
 		var nav = document.getElementById('myTopnav'); // Identify target
-		var scrollPos = 0;
+		// var scrollPos = 0;
 
 		window.addEventListener('scroll', function(event) { // To listen for event
 		    event.preventDefault();
@@ -176,16 +176,10 @@
 		        nav.style.top = '20px'
 		    } else {
 		        nav.style.backgroundColor = 'black';
-		        nav.style.top = "0"
+		        nav.style.top = "0";
 		        
 		    }
-
-		    // detects new state and compares it with the new one
-			if (small_screens && (document.body.getBoundingClientRect()).top < scrollPos){
-			    nav.style.top = "20px"
-			}
-			// saves the new position for iteration.
-			scrollPos = (document.body.getBoundingClientRect()).top;
+			
 		});
 
 
