@@ -11,14 +11,14 @@
 </head>
 <body>
 	<div id="main">
-		<nav class="topnav" id="myTopnav">
-		  <a href="#header" onclick="close_nav()">MSTR BEANS</a>
-		  <a href="#preferece" onclick="close_nav()">GUIDE</a>
-		  <a href="#reasons" onclick="close_nav()">WHY OUR COFFEE</a>
-		  <a href="#reviews" onclick="close_nav()">REVIEWS</a>
-		  <a href="#franchise" onclick="close_nav()">FRANCHISE</a>
-		  <a href="#about" onclick="close_nav()">CONTACT US</a>
-		  <a href="#franchise" onclick="close_nav()">SHOP</a>
+		<nav class="topnav" id="nav-bar">
+		  <a class="nav-link" href="#header" onclick="close_nav()">MSTR BEANS</a>
+		  <a class="nav-link" href="#preferece" onclick="close_nav()">GUIDE</a>
+		  <a class="nav-link" href="#reasons" onclick="close_nav()">WHY OUR COFFEE</a>
+		  <a class="nav-link" href="#reviews" onclick="close_nav()">REVIEWS</a>
+		  <a class="nav-link" href="#franchise" onclick="close_nav()">FRANCHISE</a>
+		  <a class="nav-link" href="#about" onclick="close_nav()">CONTACT US</a>
+		  <a class="nav-link" href="#franchise" onclick="close_nav()">SHOP</a>
 		  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
 		    <i class="fa fa-bars"></i>
 		  </a>
@@ -28,7 +28,7 @@
 		<div id="header">
 			<div id="poster-title">
 				<!-- <h1 id="tagline">MSTR BEANS</h1> -->
-				<img src="./images2/logo.png">
+				<img id="header-img" src="./images2/logo.png">
 				<span id="tagline-span">Coffee rules the world</span>
 			</div>
 		</div>
@@ -91,8 +91,7 @@
 				</div>
 			</div>
 
-			<div class="reasons-vid">
-
+			<div class="reasons-vid" id="video">
 			  <iframe class="responsive-iframe" src="https://www.youtube.com/embed/faTsRV7bkEc" frameborder="0" allowfullscreen></iframe>
 			</div>
 		</div>
@@ -132,10 +131,10 @@
 		<div id="franchise">
 			<div id="franchise-form">
 				<h1 class="title">TALK TO OUR FRANCHISE SPECIALIST</h1>
-				<form>
+				<form id="form">
 					<input type="text" placeholder="Fullname">
 					<input type="email" placeholder="Email">
-					<button class="btn">INQUIRE NOW</button>
+					<button class="btn" id="submit">INQUIRE NOW</button>
 				</form>
 			</div>
 		</div>
@@ -165,7 +164,7 @@
 
 
 		let small_screens = window.matchMedia("only screen and (min-width: 320px) and (max-width: 768px)").matches;
-		var nav = document.getElementById('myTopnav'); // Identify target
+		var nav = document.getElementById('nav-bar'); // Identify target
 		// var scrollPos = 0;
 
 		window.addEventListener('scroll', function(event) { // To listen for event
@@ -211,7 +210,7 @@
 		}
 
 		function myFunction() {
-		  var x = document.getElementById("myTopnav");
+		  var x = document.getElementById("nav-bar");
 		  if (x.className === "topnav") {
 		    x.className += " responsive";
 		  } else {
@@ -220,7 +219,7 @@
 		}
 
 		function close_nav() {
-			var x = document.getElementById("myTopnav");
+			var x = document.getElementById("nav-bar");
 			x.className = "topnav";
 		}
 
