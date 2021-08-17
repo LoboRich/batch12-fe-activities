@@ -12,13 +12,13 @@
 <body>
 	<div id="main">
 		<nav class="topnav" id="myTopnav">
-		  <a href="#poster">MSTR BEANS</a>
-		  <a href="#preferece">GUIDE</a>
-		  <a href="#reasons">WHY OUR COFFEE</a>
-		  <a href="#reviews">REVIEWS</a>
-		  <a href="#franchise">FRANCHISE</a>
-		  <a href="#about">CONTACT US</a>
-		  <a href="#franchise">SHOP</a>
+		  <a href="#poster" onclick="close_nav()">MSTR BEANS</a>
+		  <a href="#preferece" onclick="close_nav()">GUIDE</a>
+		  <a href="#reasons" onclick="close_nav()">WHY OUR COFFEE</a>
+		  <a href="#reviews" onclick="close_nav()">REVIEWS</a>
+		  <a href="#franchise" onclick="close_nav()">FRANCHISE</a>
+		  <a href="#about" onclick="close_nav()">CONTACT US</a>
+		  <a href="#franchise" onclick="close_nav()">SHOP</a>
 		  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
 		    <i class="fa fa-bars"></i>
 		  </a>
@@ -193,17 +193,17 @@
 		function showSlides(n) {
 		  var i;
 		  var slides = document.getElementsByClassName("mySlides");
-		  var dots = document.getElementsByClassName("dot");
+		  // var dots = document.getElementsByClassName("dot");
 		  if (n > slides.length) {slideIndex = 1}    
 		  if (n < 1) {slideIndex = slides.length}
 		  for (i = 0; i < slides.length; i++) {
 		      slides[i].style.display = "none";  
 		  }
-		  for (i = 0; i < dots.length; i++) {
-		      dots[i].className = dots[i].className.replace(" active", "");
-		  }
+		  // for (i = 0; i < dots.length; i++) {
+		  //     dots[i].className = dots[i].className.replace(" active", "");
+		  // }
 		  slides[slideIndex-1].style.display = "flex";  
-		  dots[slideIndex-1].className += " active";
+		  // dots[slideIndex-1].className += " active";
 		}
 
 		function myFunction() {
@@ -213,6 +213,11 @@
 		  } else {
 		    x.className = "topnav";
 		  }
+		}
+
+		function close_nav() {
+			var x = document.getElementById("myTopnav");
+			x.className = "topnav";
 		}
 
 
