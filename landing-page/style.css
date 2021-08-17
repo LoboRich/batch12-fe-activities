@@ -605,6 +605,10 @@ footer h2 {
 /*Mobile Devises*/
 @media only screen and (min-width: 320px) and (max-width: 480px) {
 
+	#policies {
+		flex-direction: column;
+	}
+	
 	.reasons-content {
 		padding: 0px;
 	}
@@ -622,7 +626,7 @@ footer h2 {
   .topnav.responsive {position: fixed;}
   .topnav.responsive .icon {
     position: fixed;
-    right: 8px;
+    right: 0;
     top: 0;
   }
   .topnav.responsive a {
