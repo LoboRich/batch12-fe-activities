@@ -110,7 +110,7 @@ body {
   display: none;
 }
 
-#poster {
+#header {
   display: block;
   position: relative;
   width: 100%;
@@ -118,7 +118,7 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.0) ), url(./images2/poster.webp);
+  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(./images2/poster.webp);
 }
 
 
@@ -148,6 +148,16 @@ body {
 #poster-img img {
 	width: 90%;
 	height: 90%;
+}
+
+#poster-title img{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 250px;
 }
 
 #tagline{

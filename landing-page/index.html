@@ -12,7 +12,7 @@
 <body>
 	<div id="main">
 		<nav class="topnav" id="myTopnav">
-		  <a href="#poster" onclick="close_nav()">MSTR BEANS</a>
+		  <a href="#header" onclick="close_nav()">MSTR BEANS</a>
 		  <a href="#preferece" onclick="close_nav()">GUIDE</a>
 		  <a href="#reasons" onclick="close_nav()">WHY OUR COFFEE</a>
 		  <a href="#reviews" onclick="close_nav()">REVIEWS</a>
@@ -25,9 +25,10 @@
 		</nav>
 
 
-		<div id="poster">
+		<div id="header">
 			<div id="poster-title">
-				<h1 id="tagline">MSTR BEANS</h1>
+				<!-- <h1 id="tagline">MSTR BEANS</h1> -->
+				<img src="./images2/logo.png">
 				<span id="tagline-span">Coffee rules the world</span>
 			</div>
 		</div>
@@ -68,16 +69,16 @@
 		</div>
 
 		<div id="reasons">
-			<h1 class="title">WHY OUR COFFEE</h1>
+			<h1 class="title">WHY OUR COFFEE BEANS</h1>
 			
 			<div class="reasons-content">
 				
 				<div>
-					<h5><i style="color: #CF7500;" class="fa fa-star"></i>TOP #1 of the Worlds Coffee</h5>
+					<h5><i style="color: #CF7500;" class="fa fa-star"></i>TOP #1 of the Worlds Coffee Beans</h5>
 					<p>Specialty grade, single origin and handpicked at peak ripeness for the highest quality.</p>
 				</div>
 				<div>
-					<h5><i style="color: #CF7500;" class="fa fa-star"></i>Coffee you can't find elsewhere</h5>
+					<h5><i style="color: #CF7500;" class="fa fa-star"></i>Coffee Beans you can't find elsewhere</h5>
 					<p>Specialty grade, single origin and handpicked at peak ripeness for the highest quality.</p>
 				</div>
 				<div>
@@ -161,7 +162,7 @@
 	</div>
 
 	<script>
-		let small_screens = window.matchMedia("only screen and (max-width: 760px)").matches;
+		// let small_screens = window.matchMedia("only screen and (min-width: 320px) and (max-width: 480px)").matches;
 		var nav = document.getElementById('myTopnav'); // Identify target
 		
 
@@ -170,10 +171,10 @@
 
 		    if (window.scrollY <= 250) { // Just an example
 		        nav.style.backgroundColor = 'transparent'; // or default color
-		        // nav.style.top = '0px'
+		        nav.style.top = '20px'
 		    } else {
 		        nav.style.backgroundColor = 'black';
-		        // nav.style.top = "20px"
+		        nav.style.top = "0"
 		        
 		    }
 		});
