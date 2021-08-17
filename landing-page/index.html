@@ -131,10 +131,10 @@
 		<div id="franchise">
 			<div id="franchise-form">
 				<h1 class="title">TALK TO OUR FRANCHISE SPECIALIST</h1>
-				<form id="form">
+				<form id="form" action="inquiry-submitted.html" method="GET">
 					<input type="text" placeholder="Fullname">
 					<input type="email" placeholder="Email">
-					<button class="btn" id="submit">INQUIRE NOW</button>
+					<input type="submit" class="btn">
 				</form>
 			</div>
 		</div>
@@ -163,7 +163,7 @@
 	<script>
 
 
-		let small_screens = window.matchMedia("only screen and (min-width: 320px) and (max-width: 768px)").matches;
+		// let small_screens = window.matchMedia("only screen and (min-width: 320px) and (max-width: 768px)").matches;
 		var nav = document.getElementById('nav-bar'); // Identify target
 		// var scrollPos = 0;
 

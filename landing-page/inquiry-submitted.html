@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>MSTR BEANS</title>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div id="main">
+		<nav class="topnav" id="nav-bar">
+		  <a class="nav-link" href="./index.html?#header" onclick="close_nav()">MSTR BEANS</a>
+		  <a class="nav-link" href="./index.html?#preferece" onclick="close_nav()">GUIDE</a>
+		  <a class="nav-link" href="./index.html?#reasons" onclick="close_nav()">WHY OUR COFFEE</a>
+		  <a class="nav-link" href="./index.html?#reviews" onclick="close_nav()">REVIEWS</a>
+		  <a class="nav-link" href="./index.html?#franchise" onclick="close_nav()">FRANCHISE</a>
+		  <a class="nav-link" href="./index.html?#about" onclick="close_nav()">CONTACT US</a>
+		  <a class="nav-link" href="./index.html?#franchise" onclick="close_nav()">SHOP</a>
+		  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+		    <i class="fa fa-bars"></i>
+		  </a>
+		</nav>
+
+		<div id="confirmed">
+			<h1 style="color: #F0A500">SENT!</h1>
+			<h3>Thank you for your interest in our products. We have sent you our reply to the email address you've provided.</h3>
+		</div>
+
+		<footer id="about">
+			
+			<ul id="socmed">
+				<li><i class="fa fa-facebook-official"></i></li>
+				<li><i class="fa fa-instagram"></i></li>
+				<li><i class="fa fa-linkedin"></i></li>
+				<li><i class="fa fa-youtube-play"></i></li>
+			</ul>
+
+			<ul id="policies">
+				<li>Refund Policy |&nbsp;</li>
+				<li>Shipping Policy |&nbsp;</li>
+				<li>Terms of Service |&nbsp;</li>
+				<li>Privacy Policy</li>
+			</ul>
+
+			<h2>MSTR BEANS</h2>
+			<p>© The MSTR BEANS Company. Powered by Cardo Dalisay.</p>
+				
+		</footer>
+	</div>
+
+	<script>
+
+
+		// let small_screens = window.matchMedia("only screen and (min-width: 320px) and (max-width: 768px)").matches;
+		var nav = document.getElementById('nav-bar'); // Identify target
+		// var scrollPos = 0;
+
+		nav.style.backgroundColor = 'black';
+
+
+
+		function myFunction() {
+		  var x = document.getElementById("nav-bar");
+		  if (x.className === "topnav") {
+		    x.className += " responsive";
+		  } else {
+		    x.className = "topnav";
+		  }
+		}
+
+		function close_nav() {
+			var x = document.getElementById("nav-bar");
+			x.className = "topnav";
+		}
+
+
+	</script>
+</body>
+</html>
