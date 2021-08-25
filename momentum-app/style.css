@@ -9,6 +9,7 @@ body {
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
+	/*background-image: url('./images/mountains.webp');*/
 	background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('./images/mountains.webp');
 	z-index: -1;
 }
@@ -26,7 +27,7 @@ body {
     z-index: 99999;
 }
 
-#form-div {
+#greetings {
 	position: absolute;
     top: 70%;
     left: 50%;
@@ -36,25 +37,93 @@ body {
     font-family: Orbitron;
     letter-spacing: 7px;
     z-index: 99999;
-    width: 30%;
+    width: 40%;
     text-align: center;
 }
 
-input{
+ 
+.field {
+  display: flex;
+  flex-flow: column-reverse;
+  margin-bottom: 1em;
+}
+
+/**
+* Add a transition to the label and input.
+* I'm not even sure that touch-action: manipulation works on
+* inputs, but hey, it's new and cool and could remove the 
+* pesky delay.
+*/
+label, input {
+  transition: all 0.2s;
+  touch-action: manipulation;
+  text-align: center;
+}
+
+input {
+	font-size: 1em;
+	border: 0;
+	border-bottom: 1px solid #ccc;
+	font-family: inherit;
+	-webkit-appearance: none;
+	border-radius: 0;
+	padding: 0;
+	cursor: text;
+
 	border-top-style: hidden;
 	border-right-style: hidden;
 	border-left-style: hidden;
 	border-bottom-style: groove;
-	background-color: #eee;
 	padding: 12px;
 	background-color: transparent;
 	width: 100%;
+	color: white;
 }
 
-input[type=text]:focus {
-  background-color: white;
-  outline: none;
-  box-shadow: 0 0px 2px white;
+input:focus {
+  outline: 0;
+  border-bottom: 1px solid #666;
+}
+
+/**
+* Translate down and scale the label up to cover the placeholder,
+* when following an input (with placeholder-shown support).
+* Also make sure the label is only on one row, at max 2/3rds of the
+* field—to make sure it scales properly and doesn't wrap.
+*/
+input:placeholder-shown + label {
+  cursor: text;
+  /*max-width: 66.66%;*/
+  white-space: nowrap;
+  overflow: hidden;
+  /*text-overflow: ellipsis;*/
+  transform-origin: center;
+  transform: translate(0, 2.125rem) scale(1);
+}
+/**
+* By default, the placeholder should be transparent. Also, it should 
+* inherit the transition.
+*/
+::-webkit-input-placeholder {
+  opacity: 0;
+  transition: inherit;
+}
+/**
+* Show the placeholder when the input is focused.
+*/
+/**
+* When the element is focused, remove the label transform.
+* Also, do this when the placeholder is _not_ shown, i.e. when 
+* there's something in the input at all.
+*/
+input:not(:placeholder-shown) + label,
+input:focus + label {
+  transform: translate(0, 0) scale(.8);
+  cursor: pointer;
+}
+
+#greet {
+	display: none;
 }
 
 
@@ -72,3 +141,79 @@ input[type=text]:focus {
     text-align: center;
     z-index: 9999;
 }
+
+#nav {
+	overflow: hidden;
+	background-color: transparent;
+	left: 0;
+	right: 0;
+	z-index: 10000;
+	top: 10$;
+	padding: 30px;
+	position: absolute;
+	display: none;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#nav a {
+	color: white;
+	text-decoration: none;
+	font-size: 1.5rem;
+}
+
+#todoList {
+	position: absolute;
+    top: 10%;
+    left: 5%;
+    /*transform: translateX(-50%) translateY(-50%);*/
+    color: black;
+    font-weight: 600;
+    font-family: Orbitron;
+    z-index: 99999;
+    width: 25%;
+    height: auto;
+    text-align: left;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    font-size: .8rem;
+    /*overflow: auto;*/
+}
+
+#listHead {
+	background-color: #DE8971;
+	padding: 15px;
+	color: white;
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+	cursor: move;
+	z-index: 10;
+  
+}
+#list {
+	padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+#list a {
+	padding: 10px;
+	text-decoration: none;
+}
+
+#listTable {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#listTable td, #listTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#listTable tr:nth-child(even){background-color: #f2f2f2;}
+
+#listTable tr:hover {background-color: #ddd;}
