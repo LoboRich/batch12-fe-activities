@@ -9,8 +9,8 @@
 </head>
 <body>
 	<nav id="nav">
-		<a class="nav-link" href="" onclick="close_nav()"><i class="fa fa-list-ul"></i></a>
-		<a href="" class="nav-link" onclick="clearSession()"> <i class="fa fa-sign-out"></i></a>
+		<a onclick="openTodoList()"><i class="fa fa-list-ul"></i></a>
+		<a onclick="clearSession()"> <i class="fa fa-sign-out"></i></a>
 	</nav>
 	<div id="main">
 		<p id="quote">"Prayers moves mountains."</p>
@@ -29,23 +29,18 @@
 		<div id="todoList">
 			<div id="listHead">
 				<span>Todo List</span>
-				<span><i class="fa fa-close"></i></span>
+				<span onclick="closeTodoList()"><i class="fa fa-close"></i></span>
 			</div>
 			<div id="list">
+				<form action="" id="addTodo" method="post">
+					<div class="field" id="add">
+						<input type="text" name="todo" id="todo" placeholder="Todo">
+						<label for="todo">Add Todo</label>
+					</div>
+				 </form>
+				
 				<table id="listTable">
-
-					<tr>
-						<td>Alfreds Futterkiste</td>
-						<td><i class="fa fa-check"></td>
-						<td><i class="fa fa-close"></td>
-					</tr>
-					<tr>
-						<td>Alfreds Futterkiste</td>
-						<td><i class="fa fa-check"></td>
-						<td><i class="fa fa-close"></td>
-					</tr>
-				  
-				 
+					
 				</table>
 			</div>
 		</div>
@@ -55,3 +50,6 @@
 	<script src="script.js"></script>
 </body>
 </html>
+
+
+

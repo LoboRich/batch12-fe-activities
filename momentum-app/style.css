@@ -10,7 +10,7 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 	/*background-image: url('./images/mountains.webp');*/
-	background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('./images/mountains.webp');
+	background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('./images/mountains.webp');
 	z-index: -1;
 }
 
@@ -124,6 +124,8 @@ input:focus + label {
 
 #greet {
 	display: none;
+	line-height: 60px;
+	font-size: 1.6rem;
 }
 
 
@@ -178,7 +180,19 @@ input:focus + label {
     display: flex;
     flex-direction: column;
     font-size: .8rem;
-    /*overflow: auto;*/
+    overflow: auto;
+    display: none;
+    animation: fade-in .5s;
+}
+
+#todoList #add {
+	color: black;
+	z-index: 999999;
+	width: 90%;
+}
+
+#add input {
+	color: black !important;
 }
 
 #listHead {
@@ -217,3 +231,13 @@ input:focus + label {
 #listTable tr:nth-child(even){background-color: #f2f2f2;}
 
 #listTable tr:hover {background-color: #ddd;}
+
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 100%;
+	}
+}
