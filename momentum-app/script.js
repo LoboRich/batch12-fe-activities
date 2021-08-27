@@ -124,23 +124,35 @@ let todoInput = document.getElementById('todo');
 
 todoForm.addEventListener( "submit", function ( event ) {
   event.preventDefault();
+  
+  if (myStorage.getItem("todo") === null) {
+    myStorage.setItem("todo", JSON.stringify([]));
+  }
+
   var todoLocal = JSON.parse(myStorage.getItem("todo"));
   todoLocal.push(todoInput.value);
   myStorage.setItem("todo", null);
   myStorage.setItem("todo", JSON.stringify(todoLocal));
   appendTodo(todoInput.value);
   
+  todoForm.reset();
+  
 } );
 
 function appendTodo(todo){
-  todoTable.innerHTML += ('<tr><td>'+todo+'</td></tr>');
+  todoTable.innerHTML += ('<tr><td>'+todo+'</td><td><i class="fa fa-check"></td><td><i class="fa fa-times"></td></tr>');
 }
 
+// *************POPULATE TODO TABLE*************
 function loadTodoTable(){
+  if (myStorage.getItem("todo") === null) {
+    myStorage.setItem("todo", JSON.stringify([]));
+  }
   var todoLocal = JSON.parse(myStorage.getItem("todo"));
   for (var i = 0; i < todoLocal.length; i++) {
-    todoTable.innerHTML += ('<tr><td>'+todoLocal[i]+'</td></tr>');
+    todoTable.innerHTML += ('<tr><td>'+todoLocal[i]+'</td><td><i class="fa fa-check"></td><td><i class="fa fa-times"></td></tr>');
   }
 }
 
 loadTodoTable();
+

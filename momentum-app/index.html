@@ -9,8 +9,8 @@
 </head>
 <body>
 	<nav id="nav">
-		<a onclick="openTodoList()"><i class="fa fa-list-ul"></i></a>
-		<a onclick="clearSession()"> <i class="fa fa-sign-out"></i></a>
+		<a onclick="openTodoList()"><i class="fa fa-list-ul"></i><span>Todo List</span></a>
+		<a onclick="clearSession()"><i class="fa fa-sign-out"></i><span>Logout</span></a>
 	</nav>
 	<div id="main">
 		<p id="quote">"Prayers moves mountains."</p>
@@ -34,7 +34,7 @@
 			<div id="list">
 				<form action="" id="addTodo" method="post">
 					<div class="field" id="add">
-						<input type="text" name="todo" id="todo" placeholder="Todo">
+						<input type="text" name="todo" id="todo" placeholder="Todo" autocomplete="off">
 						<label for="todo">Add Todo</label>
 					</div>
 				 </form>

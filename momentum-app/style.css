@@ -29,16 +29,17 @@ body {
 
 #greetings {
 	position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    color: white;
-    font-weight: 600;
-    font-family: Orbitron;
-    letter-spacing: 7px;
-    z-index: 99999;
-    width: 40%;
-    text-align: center;
+  top: 70%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: white;
+  font-weight: 600;
+  font-family: Orbitron;
+  letter-spacing: 7px;
+  z-index: 99999;
+  width: 40%;
+  text-align: center;
+  animation: move-up 1s ease-in-out;
 }
 
  
@@ -139,7 +140,7 @@ input:focus + label {
     font-family: Orbitron;
     letter-spacing: 7px;
     z-index: 99999;
-    width: 30%;
+    width: 100%;
     text-align: center;
     z-index: 9999;
 }
@@ -150,7 +151,7 @@ input:focus + label {
 	left: 0;
 	right: 0;
 	z-index: 10000;
-	top: 10$;
+	top: 10px;
 	padding: 30px;
 	position: absolute;
 	display: none;
@@ -162,6 +163,21 @@ input:focus + label {
 	color: white;
 	text-decoration: none;
 	font-size: 1.5rem;
+}
+
+/* Hide the second piece of text by default */
+#nav span {
+     display:none;
+}
+
+/* Hide the first piece of text on hover */
+#nav a:hover i {
+     display:none;
+}
+
+/* Re-show the second piece of text on hover */
+#nav a:hover span {
+    display:inline;
 }
 
 #todoList {
@@ -183,6 +199,7 @@ input:focus + label {
     overflow: auto;
     display: none;
     animation: fade-in .5s;
+    max-height: 500px;
 }
 
 #todoList #add {
@@ -239,5 +256,14 @@ input:focus + label {
 	}
 	to {
 		opacity: 100%;
+	}
+}
+
+@keyframes move-up {
+	from {
+		top: 80%;
+	}
+	to {
+		top: 70%;
 	}
 }
