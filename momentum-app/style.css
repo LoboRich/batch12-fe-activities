@@ -21,7 +21,7 @@ body {
     transform: translateX(-50%) translateY(-50%);
     color: white;
     font-weight: 600;
-    font-size: 80px;
+    font-size: 8em;
     font-family: Orbitron;
     letter-spacing: 7px;
     z-index: 99999;
@@ -140,7 +140,7 @@ input:focus + label {
     font-family: Orbitron;
     letter-spacing: 7px;
     z-index: 99999;
-    width: 100%;
+    width: 40%;
     text-align: center;
     z-index: 9999;
 }

@@ -6,7 +6,7 @@ var todoTable = document.getElementById('listTable');
 
 myStorage = window.localStorage;
 
-// *************SAVE NAME TO LOCAL STORAGE*************
+// add name to local storage
 const nameForm = document.getElementById( "myForm" );
 const nameField = document.getElementById('name');
 
@@ -14,7 +14,8 @@ nameForm.addEventListener( "submit", function ( ) {
   myStorage.setItem("name", nameField.value);
 } );
 
-// *************LOAD SESSIONS*************
+// load stored name
+
 if (localStorage.getItem("name")) {
 	greet.textContent = "Hi "+localStorage.getItem("name")+". Have a nice day!";
 	greet.style.display = 'flex';
@@ -27,13 +28,14 @@ if (localStorage.getItem("name")) {
 	todoList.style.display = 'none';
 }
 
-// *************CLEAR SESSIONS*************
+// clear storage
 function clearSession(){
   myStorage.clear();
   location.reload();
 }
 
-// *************SHOWING TIME*************
+// load time
+
 function showTime(){ 
     var date = new Date();
     var h = date.getHours(); // 0 - 23
@@ -64,7 +66,7 @@ function showTime(){
 
 showTime();
 
-// *************DRAGGABLE TODOLIST DIV*************
+// draggable todo list div
 
 dragElement(document.getElementById("todoList"));
 function dragElement(elmnt) {
@@ -108,6 +110,8 @@ function dragElement(elmnt) {
   }
 }
 
+// todo close and open todo list
+
 function closeTodoList() {
 	todoList.style.display = 'none';
 }
@@ -116,8 +120,7 @@ function openTodoList() {
 	todoList.style.display = 'block';
 }
 
-
-// *************ADD TODO*************
+// add todo
 
 const todoForm = document.getElementById( "addTodo" );
 let todoInput = document.getElementById('todo');
@@ -143,7 +146,8 @@ function appendTodo(todo){
   todoTable.innerHTML += ('<tr><td>'+todo+'</td><td><i class="fa fa-check"></td><td><i class="fa fa-times"></td></tr>');
 }
 
-// *************POPULATE TODO TABLE*************
+// populate todo list on load
+
 function loadTodoTable(){
   if (myStorage.getItem("todo") === null) {
     myStorage.setItem("todo", JSON.stringify([]));
@@ -156,3 +160,26 @@ function loadTodoTable(){
 
 loadTodoTable();
 
+// updated & load quote
+
+var quote = document.getElementById('quote');
+quote.addEventListener('input', function() {
+    // alert('Hey, somebody changed something in my text!');
+    if (myStorage.getItem("quote") === null) {
+      myStorage.setItem("quote", "");
+    }
+    var quoteLocal = myStorage.getItem("quote");
+    myStorage.setItem("quote", null);
+    myStorage.setItem("quote", quote.innerText);
+});
+
+function loadQuote(){
+  if (myStorage.getItem("quote") === null) {
+    myStorage.setItem("quote", "Faith moves mountains.");
+  }else{
+    var quoteLocal = myStorage.getItem("quote");
+    quote.innerText = quoteLocal;
+  }
+
+}
+loadQuote();
