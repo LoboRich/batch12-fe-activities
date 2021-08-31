@@ -46,7 +46,7 @@ if (localStorage.getItem("name")) {
 	input.style.display = 'none';
   focus.style.display = 'flex';
 
-  typeWriter()
+  typeWriter();
 } else {
 	greet.style.display = 'none';
 	nav.style.display = 'none';
