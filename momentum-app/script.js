@@ -9,7 +9,7 @@ var todoTable = document.getElementById('listTable');
 var focus = document.getElementById('focus');
 var focusLocal = myStorage.getItem("focus");
 var focusValue = document.getElementById('focus-value');
-var greetings = document.getElementById('greetings')
+var greetings = document.getElementById('greetings');
 
 // Quotes elements declatration
 var quoteForm = document.getElementById('quote-form');
