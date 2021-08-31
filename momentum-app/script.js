@@ -41,9 +41,10 @@ function setObjectInLocalStorage(obj, value){
   myStorage.setItem(obj, value);
 }
 
-nameForm.addEventListener( "submit", function ( ) {
+nameForm.addEventListener( "submit", function () {
   setObjectInLocalStorage("name", nameField.value)
 } );
+
 
 var i = 0;
 var txt = "Hi "+localStorage.getItem("name")+". Have a nice day!";
