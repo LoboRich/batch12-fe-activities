@@ -9,6 +9,7 @@ var todoTable = document.getElementById('listTable');
 var focus = document.getElementById('focus');
 var focusLocal = myStorage.getItem("focus");
 var focusValue = document.getElementById('focus-value');
+var greetings = document.getElementById('greetings')
 
 // Quotes elements declatration
 var quoteForm = document.getElementById('quote-form');
@@ -44,6 +45,7 @@ if (localStorage.getItem("name")) {
 	nav.style.display = 'flex';
 	input.style.display = 'none';
   focus.style.display = 'flex';
+
   typeWriter()
 } else {
 	greet.style.display = 'none';
@@ -51,6 +53,7 @@ if (localStorage.getItem("name")) {
 	input.style.display = 'flex';
 	todoList.style.display = 'none';
   focus.style.display = 'none';
+  greetings.style.width = '50%';
 }
 
 // clear storage
@@ -158,10 +161,16 @@ todoForm.addEventListener( "submit", function ( event ) {
   }
 
   var todoLocal = JSON.parse(myStorage.getItem("todo"));
-  todoLocal.push(todoInput.value);
+
+  let newTodo = {
+    id: nextTodoId(),
+    todo: todoInput.value,
+    status: 0
+  }
+  todoLocal.push(newTodo);
   myStorage.setItem("todo", null);
   myStorage.setItem("todo", JSON.stringify(todoLocal));
-  appendTodo(todoInput.value, todoLocal.length+1);
+  appendTodo(todoInput.value, nextTodoId());
   
   todoForm.reset();
   
@@ -179,7 +188,13 @@ function loadTodoTable(){
   }
   var todoLocal = JSON.parse(myStorage.getItem("todo"));
   for (var i = 0; i < todoLocal.length; i++) {
-    todoTable.innerHTML += ('<tr id="'+i+'"><td>'+todoLocal[i]+'</td><td><i class="fa fa-check" onclick="completeTodo(this)"></td><td><i class="fa fa-times"  onclick="removeTodo(this)"></td></tr>');
+
+    if (todoLocal[i].status === 1) {
+      todoTable.innerHTML += ('<tr id="'+todoLocal[i].id+'"><td class='+green-bg+'>'+todoLocal[i].todo+'</td><td><i class="fa fa-check" onclick="completeTodo(this)"></td><td><i class="fa fa-times"  onclick="removeTodo(this)"></td></tr>');
+    }else {
+      todoTable.innerHTML += ('<tr id="'+todoLocal[i].id+'"><td>'+todoLocal[i].todo+'</td><td><i class="fa fa-check" onclick="completeTodo(this)"></td><td><i class="fa fa-times"  onclick="removeTodo(this)"></td></tr>');
+    }
+    
   }
 }
 
@@ -253,9 +268,11 @@ function fetchObjectInLocalStorage(obj){
 
 function removeTodo(todo){
   var listId = todo.parentElement.parentElement;
+  var todoLocal = JSON.parse(myStorage.getItem("todo"));
   var id = listId.id;
   listId.remove();
 }
+ 
 
 function completeTodo(todo) {
   var listId = todo.parentElement.parentElement;
@@ -265,6 +282,19 @@ function completeTodo(todo) {
   var tr = document.getElementById(listId.id);
   tr.removeChild(tr.childNodes[1]); 
   tr.children[0].setAttribute("colspan", "2");
-
 }
 
+function nextTodoId(){
+  var todo = JSON.parse(myStorage.getItem("todo"));
+
+  var nextId = 1;
+  for (var i = 0; i < todo.length; i++) {
+    if (todo[i].id > nextId) {
+      nextId = todo[i].id;
+    }else{
+      nextId += todo[i].id;
+    }
+  }
+
+  return nextId;
+}
