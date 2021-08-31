@@ -1,10 +1,20 @@
+// storage declaration
+myStorage = window.localStorage;
+
 let greet = document.getElementById('greet');
 let input = document.getElementById('input-name');
 let nav = document.getElementById('nav');
 let todoList = document.getElementById('todoList');
 var todoTable = document.getElementById('listTable');
+var focus = document.getElementById('focus');
+var focusLocal = myStorage.getItem("focus");
+var focusValue = document.getElementById('focus-value');
 
-myStorage = window.localStorage;
+// Quotes elements declatration
+var quoteForm = document.getElementById('quote-form');
+var quote = document.getElementById('quote');
+var quoteField = document.getElementById('quote-field');
+var quoteLocal = myStorage.getItem("quote");
 
 // add name to local storage
 const nameForm = document.getElementById( "myForm" );
@@ -14,18 +24,33 @@ nameForm.addEventListener( "submit", function ( ) {
   myStorage.setItem("name", nameField.value);
 } );
 
-// load stored name
+var i = 0;
+var txt = "Hi "+localStorage.getItem("name")+". Have a nice day!";
+var speed = 60;
 
+function typeWriter() {
+  
+  if (i < txt.length) {
+    document.getElementById("greet").textContent += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+// load stored name
 if (localStorage.getItem("name")) {
-	greet.textContent = "Hi "+localStorage.getItem("name")+". Have a nice day!";
+
 	greet.style.display = 'flex';
 	nav.style.display = 'flex';
 	input.style.display = 'none';
+  focus.style.display = 'flex';
+  typeWriter()
 } else {
 	greet.style.display = 'none';
 	nav.style.display = 'none';
 	input.style.display = 'flex';
 	todoList.style.display = 'none';
+  focus.style.display = 'none';
 }
 
 // clear storage
@@ -136,14 +161,14 @@ todoForm.addEventListener( "submit", function ( event ) {
   todoLocal.push(todoInput.value);
   myStorage.setItem("todo", null);
   myStorage.setItem("todo", JSON.stringify(todoLocal));
-  appendTodo(todoInput.value);
+  appendTodo(todoInput.value, todoLocal.length+1);
   
   todoForm.reset();
   
 } );
 
-function appendTodo(todo){
-  todoTable.innerHTML += ('<tr><td>'+todo+'</td><td><i class="fa fa-check"></td><td><i class="fa fa-times"></td></tr>');
+function appendTodo(todo, id){
+  todoTable.innerHTML += ('<tr id="'+id+'"><td>'+todo+'</td><td><i class="fa fa-check" onclick="completeTodo(this)"></td><td><i class="fa fa-times" onclick="removeTodo(this)"></td></tr>');
 }
 
 // populate todo list on load
@@ -154,7 +179,7 @@ function loadTodoTable(){
   }
   var todoLocal = JSON.parse(myStorage.getItem("todo"));
   for (var i = 0; i < todoLocal.length; i++) {
-    todoTable.innerHTML += ('<tr><td>'+todoLocal[i]+'</td><td><i class="fa fa-check"></td><td><i class="fa fa-times"></td></tr>');
+    todoTable.innerHTML += ('<tr id="'+i+'"><td>'+todoLocal[i]+'</td><td><i class="fa fa-check" onclick="completeTodo(this)"></td><td><i class="fa fa-times"  onclick="removeTodo(this)"></td></tr>');
   }
 }
 
@@ -162,24 +187,84 @@ loadTodoTable();
 
 // updated & load quote
 
-var quote = document.getElementById('quote');
-quote.addEventListener('input', function() {
-    // alert('Hey, somebody changed something in my text!');
-    if (myStorage.getItem("quote") === null) {
-      myStorage.setItem("quote", "");
-    }
-    var quoteLocal = myStorage.getItem("quote");
-    myStorage.setItem("quote", null);
-    myStorage.setItem("quote", quote.innerText);
-});
+quoteForm.addEventListener( "submit", function (  ) {
+  fetchObjectInLocalStorage('quote');
+
+  myStorage.setItem("quote", "");
+  myStorage.setItem("quote", quoteField.value);
+  quote.innerText = '"'+quoteLocal+'"';
+  alert("Your favorite quote was successfully updated.");
+
+  window.location.href = window.location.pathname + "#close";
+} );
+
 
 function loadQuote(){
   if (myStorage.getItem("quote") === null) {
     myStorage.setItem("quote", "Faith moves mountains.");
   }else{
-    var quoteLocal = myStorage.getItem("quote");
-    quote.innerText = quoteLocal;
+    quote.textContent = '"'+quoteLocal+'"';
   }
 
 }
 loadQuote();
+
+// updated & load focus
+
+var focusForm = document.getElementById('focus-form');
+var focusField = document.getElementById('focus-field');
+focusForm.addEventListener( "submit", function (  ) {
+  fetchObjectInLocalStorage('focus');
+
+  myStorage.setItem("focus", "");
+  myStorage.setItem("focus", focusField.value);
+  focusValue.innerText = focusLocal;
+  alert("Your focus for today was successfully updated.");
+
+  window.location.href = window.location.pathname + "#close";
+} );
+
+
+function loadFocus(){
+  if (myStorage.getItem("focus") === null) {
+    myStorage.setItem("focus", "Add your today's focus.");
+  }else{
+    focusValue.textContent = focusLocal;
+  }
+
+}
+loadFocus();
+
+function showQuoteAction(){
+  document.getElementById('quote-action').style.display = 'flex'
+}
+function hideQuoteAction(){
+  document.getElementById('quote-action').style.display = 'none'
+}
+
+function fetchObjectInLocalStorage(obj){
+  var objLocal = myStorage.getItem(obj);
+  if (objLocal === null) {
+    myStorage.setItem(obj, null);
+  }
+  return objLocal;
+}
+
+
+function removeTodo(todo){
+  var listId = todo.parentElement.parentElement;
+  var id = listId.id;
+  listId.remove();
+}
+
+function completeTodo(todo) {
+  var listId = todo.parentElement.parentElement;
+  listId.classList.add("green-bg");
+  var id = listId.id;
+
+  var tr = document.getElementById(listId.id);
+  tr.removeChild(tr.childNodes[1]); 
+  tr.children[0].setAttribute("colspan", "2");
+
+}
+

@@ -8,24 +8,41 @@
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-	<nav id="nav">
-		<a onclick="openTodoList()"><i class="fa fa-list-ul"></i><span>Todo List</span></a>
-		<a onclick="clearSession()"><i class="fa fa-sign-out"></i><span>Logout</span></a>
-	</nav>
+	
 	<div id="main">
-		<p id="quote" contenteditable="true">Prayers moves mountains.</p>
-		<div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+		<nav id="nav">
+			<a onclick="openTodoList()"><i class="fa fa-list-ul"></i><span>Todo List</span></a>
+			<a onclick="clearSession()"><i class="fa fa-sign-out"></i><span>Logout</span></a>
+			
+		</nav>
+
 		<div id="greetings">
 			 <form action="" id="myForm" method="post">
 				  <div class="field" id="input-name">
 				    <input type="text" name="name" id="name" placeholder="name">
 				    <label for="name">What is your name?</label>
 				  </div>
-				  <div id="greet" class="field">
-				  </div>
+				  
 			 </form>
+			 <div id="greet" class="field">
+			</div>
 		</div>
 
+		<div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+		
+		<div id="focus">
+			<div id="focus-label">
+				<p>Your main focus today</p>
+				<a href="#focusModal" class="fa fa-edit"></a>
+			</div>
+			<h4 id="focus-value">Add your main focus today.</h4>
+		</div>
+		
+		<div id="div-quote">
+			<i id="quote">Faith moves mountains.</i>
+			<a href="#openModal" class="fa fa-edit"></a>
+		</div>
+		
 		<div id="todoList">
 			<div id="listHead">
 				<span>Todo List</span>
@@ -40,13 +57,34 @@
 				 </form>
 				
 				<table id="listTable">
-					
 				</table>
 			</div>
 		</div>
 		
 	</div>
+	<div id="openModal" class="modalDialog">
+		<div>	
+			<a href="#close" title="Close" class="close" data-dismiss="modal">X</a>
+			<h4>New Quote</h4>
+			<form action="" id="quote-form" method="post">
+			  <div class="field" id="input-name">
+			    <input type="text" id="quote-field" placeholder="quote">
+			  </div>
+		 	</form>
+		</div>
+	</div>
 
+	<div id="focusModal" class="modalDialog">
+		<div>	
+			<a href="#close" title="Close" class="close" data-dismiss="modal">X</a>
+			<h4>New focus</h4>
+			<form action="" id="focus-form" method="post">
+			  <div class="field" id="input-name">
+			    <input type="text" id="focus-field" placeholder="focus">
+			  </div>
+		 	</form>
+		</div>
+	</div>
 	<script src="script.js"></script>
 </body>
 </html>
