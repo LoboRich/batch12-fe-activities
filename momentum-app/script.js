@@ -27,6 +27,12 @@ var quoteLocal = myStorage.getItem("quote");
 const nameForm = document.getElementById( "myForm" );
 const nameField = document.getElementById('name');
 
+// clear storage
+function clearSession(){
+  myStorage.clear();
+  location.reload();
+}
+
 function fetchObjectInLocalStorage(obj){
   var objLocal = myStorage.getItem(obj);
   if (objLocal === null) {
@@ -44,19 +50,6 @@ function setObjectInLocalStorage(obj, value){
 nameForm.addEventListener( "submit", function () {
   setObjectInLocalStorage("name", nameField.value)
 } );
-
-
-var i = 0;
-var txt = "Hi "+localStorage.getItem("name")+". Have a nice day!";
-var speed = 60;
-
-function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("greet").textContent += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-}
 
 // load stored name
 if (localStorage.getItem("name")) {
@@ -76,43 +69,124 @@ if (localStorage.getItem("name")) {
   greetings.style.width = '50%';
 }
 
-// clear storage
-function clearSession(){
-  myStorage.clear();
-  location.reload();
+// Updates Focus value in local storage
+focusValue.addEventListener('input', function(){
+  setObjectInLocalStorage("focus", focusValue.innerText);
+})
+
+function loadFocus(){
+  if (myStorage.getItem("focus") === null) {
+    setObjectInLocalStorage("focus", "Add your today's focus.");
+  }else{
+    focusValue.textContent = focusLocal;
+  }
+
+}
+loadFocus();
+
+// Updates Quotes value in local storage
+quote.addEventListener('input', function(){
+  setObjectInLocalStorage("quote", quote.innerText);
+})
+
+function loadQuote(){
+  if (myStorage.getItem("quote") === null) {
+    setObjectInLocalStorage("quote", "Faith moves mountains.");
+  }else{
+    quote.textContent = quoteLocal;
+  }
+
+}
+loadQuote();
+
+// todo close and open todo list
+function closeTodoList() {
+	todoList.style.display = 'none';
 }
 
-// load time
+function openTodoList() {
+	todoList.style.display = 'block';
+}
 
-function showTime(){ 
-  var date = new Date();
-  var h = date.getHours(); // 0 - 23
-  var m = date.getMinutes(); // 0 - 59
-  var s = date.getSeconds(); // 0 - 59
-  var session = "AM";
+// add todo
+todoForm.addEventListener( "submit", function ( event ) {
+  event.preventDefault();
   
-  if(h == 0){
-      h = 12;
+  if (myStorage.getItem("todo") === null) {
+    myStorage.setItem("todo", JSON.stringify([]));
   }
-  
-  if(h > 12){
-      h = h - 12;
-      session = "PM";
+
+  var todoLocal = JSON.parse(myStorage.getItem("todo"));
+
+  let newTodo = {
+    id: nextTodoId(),
+    todo: todoInput.value,
+    status: 0
   }
+  todoLocal.push(newTodo);
+  myStorage.setItem("todo", null);
+  myStorage.setItem("todo", JSON.stringify(todoLocal));
+  appendTodo(todoInput.value, nextTodoId());
   
-  h = (h < 10) ? "0" + h : h;
-  m = (m < 10) ? "0" + m : m;
-  s = (s < 10) ? "0" + s : s;
+  todoForm.reset();
   
-  var time = h + ":" + m + ":" + s + " ";
-  document.getElementById("MyClockDisplay").innerText = time;
-  document.getElementById("MyClockDisplay").textContent = time;
-  
-  setTimeout(showTime, 1000);
+} );
+
+function appendTodo(todo, id){
+  todoTable.innerHTML += ('<tr id="'+id+'"><td>'+todo+'</td><td><i class="fa fa-check" onclick="completeTodo(this)"></td><td><i class="fa fa-times" onclick="removeTodo(this)"></td></tr>');
+}
+
+// populate todo list on load
+function loadTodoTable(){
+  if (myStorage.getItem("todo") === null) {
+    myStorage.setItem("todo", JSON.stringify([]));
+  }
+  var todoLocal = JSON.parse(myStorage.getItem("todo"));
+  for (var i = 0; i < todoLocal.length; i++) {
+
+    if (todoLocal[i].status === 1) {
+      todoTable.innerHTML += ('<tr id="'+todoLocal[i].id+'"><td class='+green-bg+'>'+todoLocal[i].todo+'</td><td><i class="fa fa-check" onclick="completeTodo(this)"></td><td><i class="fa fa-times"  onclick="removeTodo(this)"></td></tr>');
+    }else {
+      todoTable.innerHTML += ('<tr id="'+todoLocal[i].id+'"><td>'+todoLocal[i].todo+'</td><td><i class="fa fa-check" onclick="completeTodo(this)"></td><td><i class="fa fa-times"  onclick="removeTodo(this)"></td></tr>');
+    }
     
+  }
 }
 
-showTime();
+loadTodoTable();
+
+// Todo Functions
+function removeTodo(todo){
+  var listId = todo.parentElement.parentElement;
+  var todoLocal = JSON.parse(myStorage.getItem("todo"));
+  var id = listId.id;
+  listId.remove();
+}
+
+function completeTodo(todo) {
+  var listId = todo.parentElement.parentElement;
+  listId.classList.add("green-bg");
+  var id = listId.id;
+
+  var tr = document.getElementById(listId.id);
+  tr.removeChild(tr.childNodes[1]); 
+  tr.children[0].setAttribute("colspan", "2");
+}
+
+function nextTodoId(){
+  var todo = JSON.parse(myStorage.getItem("todo"));
+
+  var nextId = 1;
+  for (var i = 0; i < todo.length; i++) {
+    if (todo[i].id > nextId) {
+      nextId = todo[i].id;
+    }else{
+      nextId += todo[i].id;
+    }
+  }
+
+  return nextId;
+}
 
 // draggable todo list div
 
@@ -158,124 +232,45 @@ function dragElement(elmnt) {
   }
 }
 
-// todo close and open todo list
 
-function closeTodoList() {
-	todoList.style.display = 'none';
-}
-
-function openTodoList() {
-	todoList.style.display = 'block';
-}
-
-// add todo
-todoForm.addEventListener( "submit", function ( event ) {
-  event.preventDefault();
+// load clock time
+function showTime(){ 
+  var date = new Date();
+  var h = date.getHours(); // 0 - 23
+  var m = date.getMinutes(); // 0 - 59
+  var s = date.getSeconds(); // 0 - 59
+  var session = "AM";
   
-  if (myStorage.getItem("todo") === null) {
-    myStorage.setItem("todo", JSON.stringify([]));
+  if(h == 0){
+      h = 12;
   }
-
-  var todoLocal = JSON.parse(myStorage.getItem("todo"));
-
-  let newTodo = {
-    id: nextTodoId(),
-    todo: todoInput.value,
-    status: 0
-  }
-  todoLocal.push(newTodo);
-  myStorage.setItem("todo", null);
-  myStorage.setItem("todo", JSON.stringify(todoLocal));
-  appendTodo(todoInput.value, nextTodoId());
   
-  todoForm.reset();
+  if(h > 12){
+      h = h - 12;
+      session = "PM";
+  }
   
-} );
-
-function appendTodo(todo, id){
-  todoTable.innerHTML += ('<tr id="'+id+'"><td>'+todo+'</td><td><i class="fa fa-check" onclick="completeTodo(this)"></td><td><i class="fa fa-times" onclick="removeTodo(this)"></td></tr>');
+  h = (h < 10) ? "0" + h : h;
+  m = (m < 10) ? "0" + m : m;
+  s = (s < 10) ? "0" + s : s;
+  
+  var time = h + ":" + m + ":" + s + " ";
+  document.getElementById("MyClockDisplay").innerText = time;
+  document.getElementById("MyClockDisplay").textContent = time;
+  
+  setTimeout(showTime, 1000);
 }
 
-// populate todo list on load
+showTime();
 
-function loadTodoTable(){
-  if (myStorage.getItem("todo") === null) {
-    myStorage.setItem("todo", JSON.stringify([]));
+var i = 0;
+var txt = "Hi "+localStorage.getItem("name")+". Have a nice day!";
+var speed = 60;
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("greet").textContent += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
   }
-  var todoLocal = JSON.parse(myStorage.getItem("todo"));
-  for (var i = 0; i < todoLocal.length; i++) {
-
-    if (todoLocal[i].status === 1) {
-      todoTable.innerHTML += ('<tr id="'+todoLocal[i].id+'"><td class='+green-bg+'>'+todoLocal[i].todo+'</td><td><i class="fa fa-check" onclick="completeTodo(this)"></td><td><i class="fa fa-times"  onclick="removeTodo(this)"></td></tr>');
-    }else {
-      todoTable.innerHTML += ('<tr id="'+todoLocal[i].id+'"><td>'+todoLocal[i].todo+'</td><td><i class="fa fa-check" onclick="completeTodo(this)"></td><td><i class="fa fa-times"  onclick="removeTodo(this)"></td></tr>');
-    }
-    
-  }
-}
-
-loadTodoTable();
-
-// Updates Focus value in local storage
-focusValue.addEventListener('input', function(){
-  setObjectInLocalStorage("focus", focusValue.innerText);
-})
-
-function loadFocus(){
-  if (myStorage.getItem("focus") === null) {
-    setObjectInLocalStorage("focus", "Add your today's focus.");
-  }else{
-    focusValue.textContent = focusLocal;
-  }
-
-}
-loadFocus();
-
-// Updates Quotes value in local storage
-quote.addEventListener('input', function(){
-  setObjectInLocalStorage("quote", quote.innerText);
-})
-
-function loadQuote(){
-  if (myStorage.getItem("quote") === null) {
-    setObjectInLocalStorage("quote", "Faith moves mountains.");
-  }else{
-    quote.textContent = quoteLocal;
-  }
-
-}
-loadQuote();
-
-// Todo Functions
-function removeTodo(todo){
-  var listId = todo.parentElement.parentElement;
-  var todoLocal = JSON.parse(myStorage.getItem("todo"));
-  var id = listId.id;
-  listId.remove();
-}
- 
-
-function completeTodo(todo) {
-  var listId = todo.parentElement.parentElement;
-  listId.classList.add("green-bg");
-  var id = listId.id;
-
-  var tr = document.getElementById(listId.id);
-  tr.removeChild(tr.childNodes[1]); 
-  tr.children[0].setAttribute("colspan", "2");
-}
-
-function nextTodoId(){
-  var todo = JSON.parse(myStorage.getItem("todo"));
-
-  var nextId = 1;
-  for (var i = 0; i < todo.length; i++) {
-    if (todo[i].id > nextId) {
-      nextId = todo[i].id;
-    }else{
-      nextId += todo[i].id;
-    }
-  }
-
-  return nextId;
 }
