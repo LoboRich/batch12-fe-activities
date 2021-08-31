@@ -160,6 +160,9 @@ input:focus + label {
 	font-size: 1.6rem;;
 }
 
+#name {
+  color: white;
+}
 
 #div-quote {
 	position: absolute;
