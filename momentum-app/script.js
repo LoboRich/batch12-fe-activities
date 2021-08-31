@@ -1,28 +1,48 @@
 // storage declaration
 myStorage = window.localStorage;
 
+
 let greet = document.getElementById('greet');
 let input = document.getElementById('input-name');
 let nav = document.getElementById('nav');
-let todoList = document.getElementById('todoList');
+
+var greetings = document.getElementById('greetings');
+
+// Todo elements declaration
+var todoList = document.getElementById('todoList');
 var todoTable = document.getElementById('listTable');
+var todoForm = document.getElementById( "addTodo" );
+var todoInput = document.getElementById('todo');
+
+// Focus elements declatration
 var focus = document.getElementById('focus');
 var focusLocal = myStorage.getItem("focus");
 var focusValue = document.getElementById('focus-value');
-var greetings = document.getElementById('greetings');
 
 // Quotes elements declatration
-var quoteForm = document.getElementById('quote-form');
 var quote = document.getElementById('quote');
-var quoteField = document.getElementById('quote-field');
 var quoteLocal = myStorage.getItem("quote");
 
 // add name to local storage
 const nameForm = document.getElementById( "myForm" );
 const nameField = document.getElementById('name');
 
+function fetchObjectInLocalStorage(obj){
+  var objLocal = myStorage.getItem(obj);
+  if (objLocal === null) {
+    myStorage.setItem(obj, '');
+  }
+  return objLocal;
+}
+
+function setObjectInLocalStorage(obj, value){
+  fetchObjectInLocalStorage(obj)
+  myStorage.setItem(obj, '');
+  myStorage.setItem(obj, value);
+}
+
 nameForm.addEventListener( "submit", function ( ) {
-  myStorage.setItem("name", nameField.value);
+  setObjectInLocalStorage("name", nameField.value)
 } );
 
 var i = 0;
@@ -30,7 +50,6 @@ var txt = "Hi "+localStorage.getItem("name")+". Have a nice day!";
 var speed = 60;
 
 function typeWriter() {
-  
   if (i < txt.length) {
     document.getElementById("greet").textContent += txt.charAt(i);
     i++;
@@ -65,30 +84,30 @@ function clearSession(){
 // load time
 
 function showTime(){ 
-    var date = new Date();
-    var h = date.getHours(); // 0 - 23
-    var m = date.getMinutes(); // 0 - 59
-    var s = date.getSeconds(); // 0 - 59
-    var session = "AM";
-    
-    if(h == 0){
-        h = 12;
-    }
-    
-    if(h > 12){
-        h = h - 12;
-        session = "PM";
-    }
-    
-    h = (h < 10) ? "0" + h : h;
-    m = (m < 10) ? "0" + m : m;
-    s = (s < 10) ? "0" + s : s;
-    
-    var time = h + ":" + m + ":" + s + " ";
-    document.getElementById("MyClockDisplay").innerText = time;
-    document.getElementById("MyClockDisplay").textContent = time;
-    
-    setTimeout(showTime, 1000);
+  var date = new Date();
+  var h = date.getHours(); // 0 - 23
+  var m = date.getMinutes(); // 0 - 59
+  var s = date.getSeconds(); // 0 - 59
+  var session = "AM";
+  
+  if(h == 0){
+      h = 12;
+  }
+  
+  if(h > 12){
+      h = h - 12;
+      session = "PM";
+  }
+  
+  h = (h < 10) ? "0" + h : h;
+  m = (m < 10) ? "0" + m : m;
+  s = (s < 10) ? "0" + s : s;
+  
+  var time = h + ":" + m + ":" + s + " ";
+  document.getElementById("MyClockDisplay").innerText = time;
+  document.getElementById("MyClockDisplay").textContent = time;
+  
+  setTimeout(showTime, 1000);
     
 }
 
@@ -149,10 +168,6 @@ function openTodoList() {
 }
 
 // add todo
-
-const todoForm = document.getElementById( "addTodo" );
-let todoInput = document.getElementById('todo');
-
 todoForm.addEventListener( "submit", function ( event ) {
   event.preventDefault();
   
@@ -200,49 +215,14 @@ function loadTodoTable(){
 
 loadTodoTable();
 
-// updated & load quote
-
-quoteForm.addEventListener( "submit", function (  ) {
-  fetchObjectInLocalStorage('quote');
-
-  myStorage.setItem("quote", "");
-  myStorage.setItem("quote", quoteField.value);
-  quote.innerText = '"'+quoteLocal+'"';
-  alert("Your favorite quote was successfully updated.");
-
-  window.location.href = window.location.pathname + "#close";
-} );
-
-
-function loadQuote(){
-  if (myStorage.getItem("quote") === null) {
-    myStorage.setItem("quote", "Faith moves mountains.");
-  }else{
-    quote.textContent = '"'+quoteLocal+'"';
-  }
-
-}
-loadQuote();
-
-// updated & load focus
-
-var focusForm = document.getElementById('focus-form');
-var focusField = document.getElementById('focus-field');
-focusForm.addEventListener( "submit", function (  ) {
-  fetchObjectInLocalStorage('focus');
-
-  myStorage.setItem("focus", "");
-  myStorage.setItem("focus", focusField.value);
-  focusValue.innerText = focusLocal;
-  alert("Your focus for today was successfully updated.");
-
-  window.location.href = window.location.pathname + "#close";
-} );
-
+// Updates Focus value in local storage
+focusValue.addEventListener('input', function(){
+  setObjectInLocalStorage("focus", focusValue.innerText);
+})
 
 function loadFocus(){
   if (myStorage.getItem("focus") === null) {
-    myStorage.setItem("focus", "Add your today's focus.");
+    setObjectInLocalStorage("focus", "Add your today's focus.");
   }else{
     focusValue.textContent = focusLocal;
   }
@@ -250,22 +230,22 @@ function loadFocus(){
 }
 loadFocus();
 
-function showQuoteAction(){
-  document.getElementById('quote-action').style.display = 'flex'
-}
-function hideQuoteAction(){
-  document.getElementById('quote-action').style.display = 'none'
-}
+// Updates Quotes value in local storage
+quote.addEventListener('input', function(){
+  setObjectInLocalStorage("quote", quote.innerText);
+})
 
-function fetchObjectInLocalStorage(obj){
-  var objLocal = myStorage.getItem(obj);
-  if (objLocal === null) {
-    myStorage.setItem(obj, null);
+function loadQuote(){
+  if (myStorage.getItem("quote") === null) {
+    setObjectInLocalStorage("quote", "Faith moves mountains.");
+  }else{
+    quote.textContent = quoteLocal;
   }
-  return objLocal;
+
 }
+loadQuote();
 
-
+// Todo Functions
 function removeTodo(todo){
   var listId = todo.parentElement.parentElement;
   var todoLocal = JSON.parse(myStorage.getItem("todo"));

@@ -33,14 +33,12 @@
 		<div id="focus">
 			<div id="focus-label">
 				<p>Your main focus today</p>
-				<a href="#focusModal" class="fa fa-edit"></a>
 			</div>
-			<h4 id="focus-value">Add your main focus today.</h4>
+			<h4 id="focus-value" contenteditable>Add your main focus today.</h4>
 		</div>
 		
 		<div id="div-quote">
-			<i id="quote">Faith moves mountains.</i>
-			<a href="#openModal" class="fa fa-edit"></a>
+			<i id="quote" contenteditable>Faith moves mountains.</i>
 		</div>
 
 		<div id="todoList">
@@ -62,29 +60,8 @@
 		</div>
 		
 	</div>
-	<div id="openModal" class="modalDialog">
-		<div>	
-			<a href="#close" title="Close" class="close" data-dismiss="modal">X</a>
-			<h4>New Quote</h4>
-			<form action="" id="quote-form" method="post">
-			  <div class="field" id="input-name">
-			    <input type="text" id="quote-field" placeholder="quote">
-			  </div>
-		 	</form>
-		</div>
-	</div>
 
-	<div id="focusModal" class="modalDialog">
-		<div>	
-			<a href="#close" title="Close" class="close" data-dismiss="modal">X</a>
-			<h4>New focus</h4>
-			<form action="" id="focus-form" method="post">
-			  <div class="field" id="input-name">
-			    <input type="text" id="focus-field" placeholder="focus">
-			  </div>
-		 	</form>
-		</div>
-	</div>
+	
 	<script src="script.js"></script>
 </body>
 </html>
