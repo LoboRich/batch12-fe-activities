@@ -117,7 +117,9 @@ function loadTodoTable(){
 
 function removeTodo(todo){
   var listId = todo.parentElement.parentElement;
+  var id = listId.id;
   var todoLocal = JSON.parse(myStorage.getItem("todo"));
+  todoLocal.filter(function( obj ) { return obj.id !== id;});
   var id = listId.id;
   listId.remove();
 }
