@@ -1,0 +1,50 @@
+*, *::after, *::before {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+:root {
+	--cell-size:  150px;
+	/* calc( var(--cell-size) * .9) --> will set the size of the mark to be 90% from the parent */
+	--mark-size:  calc( var(--cell-size) * .9);
+}
+
+.board {
+	height: 100vw;
+	height: 100vh;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	grid-template-columns: repeat(3, auto);
+	justify-items: center;
+	align-items: center;
+}
+
+.cell {
+	width: var(--cell-size);
+	height: var(--cell-size);
+	border: 1px solid black;
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell.cell:nth-child(3) {
+	border-top: none;
+}
+
+.cell:last-child,
+.cell:nth-child(7),
+.cell.cell:nth-child(8) {
+	border-bottom: none;
+}
+
+.cell:nth-child(3n + 1) {
+	border-left: none;
+}
+
+.cell:nth-child(3n + 3) {
+	border-right: none;
+}
