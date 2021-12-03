@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&family=Josefin+Sans&family=Staatliches&display=swap');
+body {
+    --meca: #83b13a;
+    --white: #ffffff;
+    color: var(--white);
+    padding: 0;
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.meca-bg {
+    background-color: var(--meca);
+    color: var(--white);
+}
+
+.meca-txt {
+    color: var(--meca);
+}
+
+button {
+    padding: 1em;
+    border: none;
+    border-radius: 0.5em;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+}
+
+.title {
+    color: var(--meca);
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.2em;
+}
+
+.flex-col-container {
+    display: flex;
+    flex-direction: column;
+    height:auto;
+    width: 100%;
+}
+
+#nav {
+    height: 60px;
+    background-color: var(--meca);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 0 10px;
+    font-weight: 600;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    width: 100%; /* Full width */ 
+    z-index: 999999999;
+}
+
+#nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0 10px 0 0;
+}
+
+#nav ul li{
+    list-style: none;
+    padding: 0 1em 0 1em;
+}
+
+#nav ul li:hover{
+    border-bottom: 1px solid white;
+}
+
+#banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/banner.jpg");
+    width: 100%;
+    height: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+#banner-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 1px 1px var(--meca);
+    font-weight: 500;
+    letter-spacing: 0.2em;
+  }
+
+#banner-text button:hover {
+    background-color: #ededed;
+    color: var(--meca);
+}
+
+#services {
+    padding: 20px;
+}
+
+#services-cards {
+    height: 450px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.card {
+    width: 23%;
+    background-color: #83b13a;
+    border-radius: 10px;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.25);
+}
+
+.card-header {
+    height: 250px;
+}
+
+.card-header img{
+    width: 100%;
+    height: 250px;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-weight: bold;
+    letter-spacing: 0.2em;
+}
+
+.card button:hover {
+    color: #00853e;
+}
