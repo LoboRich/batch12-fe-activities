@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo&family=Josefin+Sans&family=Staatliches&display=swap');
 body {
-    --meca: #83b13a;
+    --meca: #8CBA51;
     --white: #ffffff;
     color: var(--white);
     padding: 0;
@@ -26,7 +26,7 @@ button {
 }
 
 .title {
-    color: var(--meca);
+    color: yellowgreen;
     font-weight: bold;
     text-align: center;
     letter-spacing: 0.2em;
@@ -113,7 +113,7 @@ button {
 .card {
     width: 24%;
     margin: 10px;
-    background-color: #83b13a;
+    background-color: var(--meca);
     border-radius: 10px;
 }
 
@@ -180,4 +180,9 @@ button {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
+}
+
+footer {
+    height: 300px;
+    background-color:#DEFF8B;
 }
