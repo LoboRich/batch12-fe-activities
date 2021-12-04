@@ -74,7 +74,7 @@ button {
 #banner {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/banner.jpg");
     width: 100%;
-    height: 600px;
+    height: 400px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -103,7 +103,7 @@ button {
 }
 
 #services-cards {
-    height: 450px;
+    height: 460px;
     padding: 20px;
     display: flex;
     flex-direction: row;
@@ -111,7 +111,8 @@ button {
 }
 
 .card {
-    width: 23%;
+    width: 24%;
+    margin: 10px;
     background-color: #83b13a;
     border-radius: 10px;
 }
@@ -140,4 +141,43 @@ button {
 
 .card button:hover {
     color: #00853e;
+}
+
+#reasons {
+    padding: 20px;
+}
+
+#reasons div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.pill {
+    width: 35%;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.pill-rigth {
+    width: 30%;
+}
+
+.pill-rigth img {
+    width: 100%;
+}
+
+.pill-left {
+    width: 70%;
+    padding: 0.5em;
+    color: black;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
 }
